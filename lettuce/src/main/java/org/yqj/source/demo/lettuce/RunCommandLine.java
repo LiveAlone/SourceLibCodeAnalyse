@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class RunCommanLine implements CommandLineRunner{
+public class RunCommandLine implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {

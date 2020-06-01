@@ -1,4 +1,4 @@
-package org.yqj.boot.demo.one;
+package org.yqj.source.demo.lettuce;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BootDemoApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder()
-                .banner(new DemoBanner())
                 .sources(BootDemoApplication.class)
                 .run(args);
     }

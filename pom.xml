@@ -25,7 +25,7 @@
     </properties>
 
     <modules>
-        <module>one</module>
+        <module>lettuce</module>
         <module>two</module>
     </modules>
 
