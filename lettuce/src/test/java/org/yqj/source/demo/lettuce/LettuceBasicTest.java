@@ -13,6 +13,16 @@ import org.junit.Test;
 public class LettuceBasicTest {
 
     @Test
+    public void testGetValue(){
+        RedisClient redisClient = RedisClient.create("redis://localhost/0");
+        StatefulRedisConnection<String, String> connection = redisClient.connect();
+        String value = connection.sync().get("key");
+        System.out.println(value);
+        connection.close();
+        redisClient.shutdown();
+    }
+
+    @Test
     public void testGetContent(){
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
