@@ -1,4 +1,4 @@
-package org.yqj.source.demo.two;
+package org.yqj.source.demo.webflux;
 
 /**
  * Created by yaoqijun.
@@ -7,7 +7,4 @@ package org.yqj.source.demo.two;
  * Descirbe:
  */
 public class TestContent {
-    public static void main(String[] args) {
-        System.out.println("test");
-    }
 }

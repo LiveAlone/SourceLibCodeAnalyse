@@ -26,7 +26,7 @@
 
     <modules>
         <module>lettuce</module>
-        <module>two</module>
+        <module>web-flux</module>
     </modules>
 
     <dependencyManagement>
