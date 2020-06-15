@@ -43,7 +43,7 @@ public class DocDemoMain {
     }
 
     public static void retryHandler() {
-        Flux.interval(Duration.ofMillis(250))
+        Flux.interval(Duration.ofMillis(1000))
                 .map(s -> {
                     if (s < 3) {
                         return "tick " + s;
@@ -55,7 +55,7 @@ public class DocDemoMain {
                 .subscribe(System.out::println, System.out::println);
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(60000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -118,7 +118,7 @@ public class DocDemoMain {
                     return "value is " + i;
                 });
 
-        for (int i=0; i<4; i++){
+        for (int i = 0; i < 4; i++) {
             flux.subscribe(System.out::println);
         }
     }
@@ -128,7 +128,7 @@ public class DocDemoMain {
 //        Scheduler s = Schedulers.immediate();
 //        Scheduler s = Schedulers.newSingle("single_new_test");
 //        Scheduler s = Schedulers.newElastic("elastic_new");
-        Scheduler s= Schedulers.newBoundedElastic(10, 10, "bounded_elastic");
+        Scheduler s = Schedulers.newBoundedElastic(10, 10, "bounded_elastic");
 
         final Flux<String> flux = Flux
                 .range(1, 10)
