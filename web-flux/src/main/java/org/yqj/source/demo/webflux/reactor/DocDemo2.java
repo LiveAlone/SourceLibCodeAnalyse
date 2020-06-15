@@ -26,25 +26,12 @@ public class DocDemo2 {
 
 //        parallelCondition();
 
-//        bufferCondition();
-
 //        windowCondition();
 
 //        groupMapping();
 
-//        connectableFluxTest();
+        connectableFluxTest();
 
-//        hotAndColdContext();
-
-        schedulerTest();
-
-//        handleTest();
-
-//        fluxCreate();
-
-//        fluxGenerateState();
-
-//        baseSubscriberTest();
     }
 
     static final String HTTP_CORRELATION_ID = "reactive.http.library.correlationId";
@@ -121,14 +108,6 @@ public class DocDemo2 {
                 });
     }
 
-    private static void bufferCondition(){
-        reactor.core.publisher.Flux.range(1, 10).buffer(5,3).subscribe(System.out::println);
-
-//        Flux.just(1, 3, 5, 2, 4, 6, 11, 12, 13)
-//                .bufferWhile(i -> i % 2 == 0)
-//                .subscribe(System.out::println);
-    }
-
     private static void windowCondition(){
 //        Flux.range(1, 10)
 //                .window(5, 3)
@@ -182,96 +161,5 @@ public class DocDemo2 {
 //        }
 //        System.out.println("subscribing second");
 //        autoCo.subscribe(System.out::println, e -> {}, () -> {});
-    }
-
-    public static void hotAndColdContext(){
-//        Flux<String> source = Flux.fromIterable(Arrays.asList("blue", "green", "orange", "purple"))
-////                .doOnNext(System.out::println)
-//                .filter(s -> s.startsWith("o"))
-//                .map(String::toUpperCase);
-//
-//        source.subscribe(d -> System.out.println("Subscriber 1: "+d));
-//        source.subscribe(d -> System.out.println("Subscriber 2: "+d));
-
-        // hot condition
-        UnicastProcessor<String> hotSource = UnicastProcessor.create();
-
-        reactor.core.publisher.Flux<String> hotFlux = hotSource.publish()
-                .autoConnect()
-                .map(String::toUpperCase);
-
-        hotFlux.subscribe(d -> System.out.println("Subscriber 1 to Hot Source: "+d));
-
-        hotSource.onNext("blue");
-        hotSource.onNext("green");
-
-        hotFlux.subscribe(d -> System.out.println("Subscriber 2 to Hot Source: "+d));
-
-        hotSource.onNext("orange");
-        hotSource.onNext("purple");
-        hotSource.onComplete();
-    }
-
-    private static void schedulerTest(){
-        reactor.core.publisher.Flux.range(1, 1000)
-                .publishOn(Schedulers.newParallel("haha"))
-                .subscribe(new BaseSubscriber<Integer>() {
-                    @Override
-                    protected void hookOnSubscribe(Subscription subscription) {
-                        subscription.request(1);
-                    }
-
-                    @Override
-                    protected void hookOnNext(Integer value) {
-                        System.out.println(Thread.currentThread().getName() + " " + value);
-                        try {
-                            Thread.sleep(1000L);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        request(5);
-                    }
-                });
-    }
-
-    private static void handleTest(){
-        reactor.core.publisher.Flux.range(1, 10)
-                .handle((integer, synchronousSink) -> {
-                   if (integer % 2 ==0){
-                       synchronousSink.next(integer);
-                   }else {
-                       System.out.println("context ignore value is " + integer);
-                   }
-                }).subscribe(System.out::println);
-    }
-
-    private static void fluxCreate(){
-        reactor.core.publisher.Flux.create(fluxSink -> fluxSink.next("yaoqijun")).subscribe(System.out::println);
-    }
-
-    private static void fluxGenerateState(){
-        reactor.core.publisher.Flux.generate(AtomicInteger::new, (atomicInteger, synchronousSink) -> {
-            long i = atomicInteger.getAndIncrement();
-            synchronousSink.next("3 x " + i + " = " + 3*i);
-            if (i == 10){
-                synchronousSink.complete();
-            }
-            return atomicInteger;
-        }).subscribe(System.out::println);
-    }
-
-    private static void baseSubscriberTest(){
-        reactor.core.publisher.Flux.range(1, 10).subscribe(new BaseSubscriber<Integer>() {
-            @Override
-            protected void hookOnSubscribe(Subscription subscription) {
-                subscription.request(1);
-            }
-
-            @Override
-            protected void hookOnNext(Integer value) {
-                System.out.println(value);
-                request(1);
-            }
-        });
     }
 }

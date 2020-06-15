@@ -5,10 +5,12 @@ import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.UnicastProcessor;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 /**
  * Description:
@@ -39,7 +41,68 @@ public class DocDemoMain {
 
 //        errorHandlerCondition();
 
-        retryHandler();
+//        retryHandler();
+
+//        hotColdHandlerTest();
+
+//        testDelayElement();
+
+        bufferCondition();
+    }
+
+    private static void bufferCondition(){
+//        Flux.range(1, 10)
+//                .buffer(5,3)
+//                .subscribe(System.out::println);
+
+        Flux.just(1, 3, 5, 2, 4, 6, 11, 12, 13)
+                .bufferWhile(i -> i % 2 == 0)
+                .subscribe(System.out::println);
+    }
+
+    public static void testDelayElement(){
+        Flux.just("A", "B", "C")
+                .delayElements(Duration.ofSeconds(1))
+                .subscribe(System.out::println);
+
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void hotColdHandlerTest(){
+//        Flux<String> source = Flux.fromIterable(Arrays.asList("blue", "green", "orange", "purple"))
+//                .doOnNext(System.out::println)
+//                .filter(s -> s.startsWith("o"))
+//                .map(String::toUpperCase);
+//
+//        System.out.println("*************************");
+//        source.subscribe(d -> System.out.println("Subscriber 1: "+d));
+//        System.out.println("*************************");
+//        source.subscribe(d -> System.out.println("Subscriber 2: "+d));
+
+        // hot condition
+        UnicastProcessor<String> hotSource = UnicastProcessor.create();
+
+        Flux<String> hotFlux = hotSource.publish()
+                .autoConnect()
+                .map(s->{
+                    System.out.println("to convert string is " + s);
+                    return s.toUpperCase();
+                });
+
+        hotFlux.subscribe(d -> System.out.println("Subscriber 1 to Hot Source: "+d));
+
+        hotSource.onNext("blue");
+        hotSource.onNext("green");
+
+        hotFlux.subscribe(d -> System.out.println("Subscriber 2 to Hot Source: "+d));
+
+        hotSource.onNext("orange");
+        hotSource.onNext("purple");
+        hotSource.onComplete();
     }
 
     public static void retryHandler() {
