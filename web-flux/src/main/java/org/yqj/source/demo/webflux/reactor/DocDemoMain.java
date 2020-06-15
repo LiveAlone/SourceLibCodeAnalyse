@@ -35,11 +35,11 @@ public class DocDemoMain {
 
 //        publishOnTest();
 
-        subscribeOnTest();
+//        subscribeOnTest();
 
 //        errorHandlerCondition();
 
-//        retryHandler();
+        retryHandler();
     }
 
     public static void retryHandler() {
@@ -73,7 +73,7 @@ public class DocDemoMain {
 //                .map(i -> 100 / i)
 //                .onErrorReturn(6666)
 //                .subscribe(System.out::println);
-
+//
 //        Flux.just(1, 2, 3, 4, 5, 0, 6, 7, 9)
 //                .map(i -> i * 2)
 //                .map(i -> 100 / i)
@@ -90,13 +90,12 @@ public class DocDemoMain {
 //                    return Flux.error(new RuntimeException("zero error"));
 //                }).subscribe(System.out::println);
 
-        Flux.just(1, 2, 3, 4, 5, 0, 6, 7, 9)
-                .map(i -> i * 2)
-                .map(i -> 100 / i)
-                .doFinally(signalType -> {
-                    System.out.println(signalType);
-                })
-                .subscribe(System.out::println);
+//        Flux.just(1, 2, 3, 4, 5, 0, 6, 7, 9)
+//                .map(i -> i * 2)
+//                .map(i -> 100 / i)
+//                .doFinally(signalType -> {
+//                    System.out.println(signalType);
+//                }).subscribe(System.out::println);
     }
 
     public static void subscribeOnTest() {
@@ -111,7 +110,7 @@ public class DocDemoMain {
                 .subscribeOn(s)
                 .map(i -> {
                     try {
-                        Thread.sleep(200);
+                        Thread.sleep(50);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -125,10 +124,14 @@ public class DocDemoMain {
     }
 
     public static void publishOnTest() {
-        Scheduler s = Schedulers.newParallel("parallel-scheduler", 4);
+//        Scheduler s = Schedulers.newParallel("parallel-scheduler", 4);
+//        Scheduler s = Schedulers.immediate();
+//        Scheduler s = Schedulers.newSingle("single_new_test");
+//        Scheduler s = Schedulers.newElastic("elastic_new");
+        Scheduler s= Schedulers.newBoundedElastic(10, 10, "bounded_elastic");
 
         final Flux<String> flux = Flux
-                .range(1, 1000)
+                .range(1, 10)
                 .map(i -> {
                     int value = i * 10;
                     System.out.println("map1 current thread is " + Thread.currentThread().getName() + " value is " + value);
@@ -145,11 +148,11 @@ public class DocDemoMain {
                     return "value " + i;
                 });
 
-//        for (int i = 0; i < 4; i++) {
-//            new Thread(() -> flux.subscribe(System.out::println), String.format("single_test_push_on_thread" + i)).start();
-//        }
+        for (int i = 0; i < 4; i++) {
+            new Thread(() -> flux.subscribe(System.out::println), String.format("single_test_push_on_thread" + i)).start();
+        }
 
-        new Thread(() -> flux.subscribe(System.out::println), String.format("single_test_push_on_thread")).start();
+//        new Thread(() -> flux.subscribe(System.out::println), String.format("single_test_push_on_thread")).start();
     }
 
     public static void fluxHandleConfig() {
