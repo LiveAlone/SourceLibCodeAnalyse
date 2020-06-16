@@ -10,7 +10,6 @@ import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
-import java.util.Arrays;
 
 /**
  * Description:
@@ -47,10 +46,55 @@ public class DocDemoMain {
 
 //        testDelayElement();
 
-        bufferCondition();
+//        bufferCondition();
+
+//        connectableFluxTest();
+
+//        groupMapping();
     }
 
-    private static void bufferCondition(){
+    private static void groupMapping() {
+        Flux.just(1, 3, 5, 2, 4, 6, 11, 12, 13).groupBy(i -> i % 2 == 0 ? "even" : "odd")
+                .concatMap(g -> g.defaultIfEmpty(-1).map(String::valueOf).startWith(g.key()))
+                .subscribe(System.out::println);
+    }
+
+    private static void connectableFluxTest() {
+//        Flux<Integer> source = Flux.range(1, 3)
+//                .doOnSubscribe(s -> System.out.println("subscribed to source"));
+//
+//        ConnectableFlux<Integer> co = source.publish();
+//
+//        co.subscribe(System.out::println, e -> {}, () -> {});
+//        co.subscribe(System.out::println, e -> {}, () -> {});
+//
+//        System.out.println("done subscribing");
+//        try {
+//            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("will now connect");
+//        co.connect();
+
+
+//        Flux<Integer> source = Flux.range(1, 3)
+//                .doOnSubscribe(s -> System.out.println("subscribed to source"));
+//
+//        Flux<Integer> autoCo = source.publish().autoConnect(2);
+//
+//        autoCo.subscribe(System.out::println, e -> {}, () -> {});
+//        System.out.println("subscribed first");
+//        try {
+//            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("subscribing second");
+//        autoCo.subscribe(System.out::println, e -> {}, () -> {});
+    }
+
+    private static void bufferCondition() {
 //        Flux.range(1, 10)
 //                .buffer(5,3)
 //                .subscribe(System.out::println);
@@ -60,7 +104,7 @@ public class DocDemoMain {
                 .subscribe(System.out::println);
     }
 
-    public static void testDelayElement(){
+    public static void testDelayElement() {
         Flux.just("A", "B", "C")
                 .delayElements(Duration.ofSeconds(1))
                 .subscribe(System.out::println);
@@ -72,7 +116,7 @@ public class DocDemoMain {
         }
     }
 
-    public static void hotColdHandlerTest(){
+    public static void hotColdHandlerTest() {
 //        Flux<String> source = Flux.fromIterable(Arrays.asList("blue", "green", "orange", "purple"))
 //                .doOnNext(System.out::println)
 //                .filter(s -> s.startsWith("o"))
@@ -88,17 +132,17 @@ public class DocDemoMain {
 
         Flux<String> hotFlux = hotSource.publish()
                 .autoConnect()
-                .map(s->{
+                .map(s -> {
                     System.out.println("to convert string is " + s);
                     return s.toUpperCase();
                 });
 
-        hotFlux.subscribe(d -> System.out.println("Subscriber 1 to Hot Source: "+d));
+        hotFlux.subscribe(d -> System.out.println("Subscriber 1 to Hot Source: " + d));
 
         hotSource.onNext("blue");
         hotSource.onNext("green");
 
-        hotFlux.subscribe(d -> System.out.println("Subscriber 2 to Hot Source: "+d));
+        hotFlux.subscribe(d -> System.out.println("Subscriber 2 to Hot Source: " + d));
 
         hotSource.onNext("orange");
         hotSource.onNext("purple");
