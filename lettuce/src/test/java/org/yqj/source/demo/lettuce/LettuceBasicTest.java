@@ -5,9 +5,6 @@ import io.lettuce.core.RedisFuture;
 import io.lettuce.core.api.StatefulRedisConnection;
 import org.junit.Test;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by yaoqijun.
@@ -16,6 +13,16 @@ import java.util.concurrent.ThreadLocalRandom;
  * Descirbe:
  */
 public class LettuceBasicTest {
+
+    @Test
+    public void testGetRedisKey() throws Exception{
+        RedisClient redisClient = RedisClient.create("redis://localhost/0");
+        StatefulRedisConnection<String, String> stringStringStatefulRedisConnection = redisClient.connect();
+        System.out.println(stringStringStatefulRedisConnection.sync().get("key"));
+        Thread.sleep(1000);
+        stringStringStatefulRedisConnection.close();
+        redisClient.shutdown();
+    }
 
     @Test
     public void testGetKeyReactiveTask() throws Exception {
@@ -83,7 +90,7 @@ public class LettuceBasicTest {
     public void testPingPongRedis() {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
-        System.out.println(connection.sync().ping());
+        System.out.println(connection.sync().zrem("test_zset"));
         connection.close();
         redisClient.shutdown();
     }
