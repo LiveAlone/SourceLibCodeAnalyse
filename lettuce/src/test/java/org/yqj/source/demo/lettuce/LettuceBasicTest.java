@@ -4,6 +4,7 @@ import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisFuture;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
+import org.junit.Ignore;
 import org.junit.Test;
 import reactor.core.publisher.Mono;
 
@@ -16,6 +17,7 @@ import reactor.core.publisher.Mono;
 public class LettuceBasicTest {
 
     @Test
+    @Ignore
     public void testGetRedisKey() throws Exception{
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> stringStringStatefulRedisConnection = redisClient.connect();
@@ -27,6 +29,7 @@ public class LettuceBasicTest {
     }
 
     @Test
+    @Ignore
     public void testGetKeyReactiveTask() throws Exception {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
@@ -61,6 +64,7 @@ public class LettuceBasicTest {
     }
 
     @Test
+    @Ignore
     public void testGetRunTask() throws Exception {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
@@ -78,6 +82,7 @@ public class LettuceBasicTest {
     }
 
     @Test
+    @Ignore
     public void testReadWriteExample() {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
@@ -89,6 +94,7 @@ public class LettuceBasicTest {
     }
 
     @Test
+    @Ignore
     public void testPingPongRedis() {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
