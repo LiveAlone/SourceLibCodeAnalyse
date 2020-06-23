@@ -3,6 +3,7 @@ package org.yqj.source.demo.lettuce;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisFuture;
 import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.junit.Test;
 import reactor.core.publisher.Mono;
 
@@ -18,8 +19,9 @@ public class LettuceBasicTest {
     public void testGetRedisKey() throws Exception{
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> stringStringStatefulRedisConnection = redisClient.connect();
-        System.out.println(stringStringStatefulRedisConnection.sync().get("key"));
-        Thread.sleep(1000);
+        RedisCommands<String, String> redisCommands = stringStringStatefulRedisConnection.sync();
+        String result = redisCommands.get("key");
+        System.out.println(result);
         stringStringStatefulRedisConnection.close();
         redisClient.shutdown();
     }
