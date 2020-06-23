@@ -16,22 +16,22 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class CompletableFutureTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
 
 //        futureSingle();
 
-        // 1. CompletableFuture price set
-//        completableFutureSet();
+//         1. CompletableFuture price set
+        completableFutureSet();
 
         // 2.calculateChain
 //        calculateChain();
 
-        try {
-            testGetNow();
-        } catch (Exception e) {
-            System.out.println(e.getClass().getName());
-        }
-        System.out.println("finish");
+//        try {
+//            testGetNow();
+//        } catch (Exception e) {
+//            System.out.println(e.getClass().getName());
+//        }
+//        System.out.println("finish");
     }
 
     public static void testGetNow() throws Exception{
@@ -71,21 +71,21 @@ public class CompletableFutureTest {
     }
 
     public static void completableFutureSet(){
-        CompletableFuture<String> completableFuture = new CompletableFuture<>();
+        CompletableFuture<Double> completableFuture = new CompletableFuture<>();
         Thread processThread = new Thread(()->{
+            System.out.println("First Step Thread Value is " + Thread.currentThread().getName());
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("process current thread name " + Thread.currentThread().getName());
-            completableFuture.complete("process finish");
-        });
-        processThread.setName("processThread");
+            completableFuture.complete(123D);
+        }, "processThread");
+
+        System.out.println("main started");
         processThread.start();
-        System.out.println("main start");
         completableFuture.whenComplete((a, s) -> {
-            System.out.println("complete current thread " + Thread.currentThread().getName());
+            System.out.println("Complete Step Thread Value is " + Thread.currentThread().getName());
             System.out.println(a);
         });
         System.out.println("main finish");
@@ -103,5 +103,4 @@ public class CompletableFutureTest {
         System.out.println("main finish");
         es.shutdown();
     }
-
 }
