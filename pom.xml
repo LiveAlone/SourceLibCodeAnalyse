@@ -27,6 +27,7 @@
     <modules>
         <module>lettuce</module>
         <module>web-flux</module>
+        <module>basic</module>
         <module>empty</module>
     </modules>
 
