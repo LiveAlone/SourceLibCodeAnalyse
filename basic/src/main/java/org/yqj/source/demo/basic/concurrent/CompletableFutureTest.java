@@ -70,12 +70,12 @@ public class CompletableFutureTest {
         return ThreadLocalRandom.current().nextInt(1000);
     }
 
-    public static void completableFutureSet(){
+    public static void completableFutureSet() throws Exception{
         CompletableFuture<Double> completableFuture = new CompletableFuture<>();
         Thread processThread = new Thread(()->{
             System.out.println("First Step Thread Value is " + Thread.currentThread().getName());
             try {
-                Thread.sleep(5000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -84,9 +84,10 @@ public class CompletableFutureTest {
 
         System.out.println("main started");
         processThread.start();
-        completableFuture.whenComplete((a, s) -> {
+        CompletableFuture<Double> d2 = completableFuture.whenComplete((a, s) -> {
             System.out.println("Complete Step Thread Value is " + Thread.currentThread().getName());
             System.out.println(a);
+            System.out.println(s);
         });
         System.out.println("main finish");
     }
