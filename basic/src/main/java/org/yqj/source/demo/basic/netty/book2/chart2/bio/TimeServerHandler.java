@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.netty.book2.chart2;
+package org.yqj.source.demo.basic.netty.book2.chart2.bio;
 
 import org.joda.time.DateTime;
 

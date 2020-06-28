@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.netty.book2.chart2;
+package org.yqj.source.demo.basic.netty.book2.chart2.bio;
 
 import java.io.IOException;
 import java.net.ServerSocket;
