@@ -10,8 +10,11 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
- * Created by yaoqijun on 2017/8/26.
- * server create by netty
+ * Description:
+ *
+ * @author yaoqijun
+ * @date 2020/6/29
+ * Email: yaoqijunmail@foxmail.com
  */
 public class TimeServer {
 
@@ -19,11 +22,10 @@ public class TimeServer {
         new TimeServer().bind(8080);
     }
 
-    public void bind(int port) throws Exception{
+    public void bind(int port){
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
-
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
@@ -40,11 +42,10 @@ public class TimeServer {
         }
     }
 
-    private class ChildChannelHandler extends ChannelInitializer<SocketChannel>{
+    private class ChildChannelHandler extends ChannelInitializer<SocketChannel> {
         @Override
         protected void initChannel(SocketChannel socketChannel) throws Exception {
             socketChannel.pipeline().addLast(new TimeServerHandler());
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.netty.book2.chart2.bio;
+package org.yqj.source.demo.basic.netty.book.chart2.bio;
 
 import java.io.BufferedReader;
 import java.io.IOException;

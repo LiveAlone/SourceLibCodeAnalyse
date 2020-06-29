@@ -10,7 +10,11 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 /**
- * Created by yaoqijun on 2017/8/26.
+ * Description:
+ *
+ * @author yaoqijun
+ * @date 2020/6/29
+ * Email: yaoqijunmail@foxmail.com
  */
 public class TimeClient {
 
@@ -21,9 +25,7 @@ public class TimeClient {
     public void connect() throws Exception{
         EventLoopGroup group = new NioEventLoopGroup();
         try {
-
             Bootstrap bootstrap = new Bootstrap();
-
             bootstrap.group(group)
                     .channel(NioSocketChannel.class)
                     .option(ChannelOption.TCP_NODELAY, true)
@@ -33,7 +35,6 @@ public class TimeClient {
                             socketChannel.pipeline().addLast(new TimeClientHandler());
                         }
                     });
-
             ChannelFuture future = bootstrap.connect("127.0.0.1", 8080).sync();
             future.channel().closeFuture().sync();
         }catch (Exception e){

@@ -7,7 +7,7 @@ public class TimeServer {
 
     public static void main(String[] args) {
 
-        MultiplexerTimeServer multiplexerTimeServer = new MultiplexerTimeServer(8080);
+        MultiplexerTimeServer multiplexerTimeServer = new MultiplexerTimeServer(9090);
 
         new Thread(multiplexerTimeServer, "NIO-MultipleServer-001").start();
     }

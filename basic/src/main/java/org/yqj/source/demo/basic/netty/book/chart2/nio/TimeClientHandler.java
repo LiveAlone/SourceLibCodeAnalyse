@@ -9,6 +9,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
+
 /**
  * Created by yaoqijun on 2017/8/25.
  */
@@ -47,15 +48,10 @@ public class TimeClientHandler implements Runnable{
 
         while (!stop){
             try {
-
                 selector.select(1000);
-
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
-
                 Iterator<SelectionKey> it = selectionKeys.iterator();
-
                 SelectionKey key = null;
-
                 while (it.hasNext()){
                     key = it.next();
                     it.remove();
@@ -71,21 +67,21 @@ public class TimeClientHandler implements Runnable{
                         }
                     }
                 }
-
-                if (selector!=null){
-                    try {
-                        selector.close();
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-
             }catch (Exception e){
                 e.printStackTrace();
                 System.exit(1);
             }
         }
 
+        System.out.println("finish all " + stop);
+
+        if (selector!=null){
+            try {
+                selector.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     private void handleInput(SelectionKey selectionKey) throws IOException{
@@ -111,7 +107,7 @@ public class TimeClientHandler implements Runnable{
                     readBuffer.get(bytes);
                     String body = new String(bytes, "UTF-8");
                     System.out.println("body is  "+body);
-                    this.stop = true;
+//                    this.stop = true;
                 }else if (readBytes < 0){
                     selectionKey.cancel();
                     sc.close();
