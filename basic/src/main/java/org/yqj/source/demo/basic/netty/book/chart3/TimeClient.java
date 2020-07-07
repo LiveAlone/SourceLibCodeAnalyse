@@ -36,8 +36,7 @@ public class TimeClient {
                         }
                     });
             ChannelFuture future = bootstrap.connect("127.0.0.1", 8080).sync();
-            ChannelFuture channelFuture = future.channel().closeFuture().sync();
-            channelFuture.channel().closeFuture().sync();
+            future.channel().closeFuture().sync();
         }catch (Exception e){
             e.printStackTrace();
         }finally {

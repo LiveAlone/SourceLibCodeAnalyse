@@ -35,7 +35,7 @@ public class TimeServer {
             ChannelFuture channelFuture = b.bind(port).sync();
             channelFuture.channel().closeFuture().sync();
         }catch (Exception e){
-            throw new RuntimeException();
+            e.printStackTrace();
         }finally {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();

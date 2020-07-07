@@ -28,6 +28,8 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
         byteBuf.readBytes(req);
         String body = new String(req, StandardCharsets.UTF_8);
         System.out.println("Now time content is " + body);
+
+        ctx.close();
     }
 
     @Override
