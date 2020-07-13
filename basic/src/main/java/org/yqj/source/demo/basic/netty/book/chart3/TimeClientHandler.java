@@ -18,6 +18,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("channel active in thread " + Thread.currentThread().getName());
         ctx.writeAndFlush(Unpooled.copiedBuffer("QUERY TIME ORDER".getBytes()));
     }
 
@@ -27,8 +28,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
         byte[] req = new byte[byteBuf.readableBytes()];
         byteBuf.readBytes(req);
         String body = new String(req, StandardCharsets.UTF_8);
-        System.out.println("Now time content is " + body);
-
+        System.out.println("Now time content is " + body + " current thread is " + Thread.currentThread().getName());
         ctx.close();
     }
 
