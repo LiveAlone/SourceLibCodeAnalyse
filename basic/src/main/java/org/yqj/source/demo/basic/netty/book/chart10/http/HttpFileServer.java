@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.netty.book.chart10.httpfile;
+package org.yqj.source.demo.basic.netty.book.chart10.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -17,7 +17,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
  */
 public class HttpFileServer {
 
-    private static final String DEFAULT_URL = "src/main/java/org/yqj/java/demo/netty/book/chart10/httpfile";
+    private static final String DEFAULT_URL = "/Users/yaoqijun/workspace/work/cache";
 
     public void run(int port, String url) throws Exception{
         EventLoopGroup bossGroup = new NioEventLoopGroup();

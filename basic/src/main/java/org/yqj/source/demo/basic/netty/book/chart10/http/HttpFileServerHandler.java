@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.netty.book.chart10.httpfile;
+package org.yqj.source.demo.basic.netty.book.chart10.http;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
