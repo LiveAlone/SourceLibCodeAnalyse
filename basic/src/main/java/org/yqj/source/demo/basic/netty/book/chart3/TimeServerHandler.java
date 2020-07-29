@@ -9,12 +9,16 @@ import org.joda.time.DateTime;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Created by yaoqijun on 2017/8/26.
+ * Description:
+ *
+ * @author yaoqijun
+ * @date 2020/6/29
+ * Email: yaoqijunmail@foxmail.com
  */
-public class TimeServerHandler  extends ChannelInboundHandlerAdapter {
+public class TimeServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
         ByteBuf byteBuf = (ByteBuf) msg;
         byte[] bytes = new byte[byteBuf.readableBytes()];
         byteBuf.readBytes(bytes);
@@ -26,7 +30,7 @@ public class TimeServerHandler  extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+    public void channelReadComplete(ChannelHandlerContext ctx) {
         ctx.flush();
     }
 
