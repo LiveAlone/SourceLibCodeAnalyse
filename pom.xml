@@ -29,7 +29,8 @@
 <!--        <module>web-flux</module>-->
 <!--        <module>basic</module>-->
 <!--        <module>empty</module>-->
-        <module>mapper</module>
+<!--        <module>mapper</module>-->
+        <module>resilience4j</module>
     </modules>
 
     <dependencyManagement>
