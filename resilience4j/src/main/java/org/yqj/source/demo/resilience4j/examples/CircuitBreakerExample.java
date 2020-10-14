@@ -9,10 +9,12 @@ import io.github.resilience4j.core.registry.EntryRemovedEvent;
 import io.github.resilience4j.core.registry.EntryReplacedEvent;
 import io.github.resilience4j.core.registry.RegistryEventConsumer;
 import io.vavr.control.Try;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Supplier;
 
@@ -175,5 +177,37 @@ public class CircuitBreakerExample {
         // circuit break 定制不同的 config 配置
         CircuitBreaker circuitBreakerWithCustomConfig = circuitBreakerRegistry.circuitBreaker("name2", config);
         CircuitBreaker circuitBreakerWithDefaultConfig = circuitBreakerRegistry.circuitBreaker("name1");
+    }
+
+    /**
+     * Description:
+     *
+     * @author yaoqijun
+     * @date 2020/10/14
+     * Email: yaoqijunmail@foxmail.com
+     */
+    @Data
+    public static class MockRpcCall implements Supplier<String> {
+
+        private int failRate = 50;
+
+        private long baseDelay = 200;
+
+        private long delayRandom = 200;
+
+
+        @Override
+        public String get() {
+            if (ThreadLocalRandom.current().nextInt(100) < failRate){
+                throw new RuntimeException("rpcCallError");
+            }
+            try {
+                Thread.sleep(baseDelay + ThreadLocalRandom.current().nextLong(delayRandom));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e.getCause());
+            }
+            return "SUCCESS";
+        }
     }
 }
