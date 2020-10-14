@@ -15,14 +15,15 @@
     </parent>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-ratelimiter -->
+        <!-- https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-all -->
         <dependency>
             <groupId>io.github.resilience4j</groupId>
-            <artifactId>resilience4j-ratelimiter</artifactId>
+            <artifactId>resilience4j-all</artifactId>
             <version>1.6.1</version>
         </dependency>
 
-<!--        <dependency>-->
+
+        <!--        <dependency>-->
 <!--            <groupId>io.vavr</groupId>-->
 <!--            <artifactId>vavr</artifactId>-->
 <!--            <version>0.10.3</version>-->
