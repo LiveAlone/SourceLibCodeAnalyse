@@ -1,3 +1,15 @@
 logging:
   level:
     root: INFO
+spring:
+  application:
+    name: actuator_local_test
+management:
+  endpoints:
+    jmx:
+      exposure:
+        exclude: "*"
+    web:
+      exposure:
+        include: health,info,prometheus,readiness,beans
+
