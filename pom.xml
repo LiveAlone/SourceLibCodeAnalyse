@@ -28,10 +28,10 @@
 <!--        <module>lettuce</module>-->
 <!--        <module>web-flux</module>-->
 <!--        <module>basic</module>-->
-<!--        <module>empty</module>-->
 <!--        <module>mapper</module>-->
 <!--        <module>resilience4j</module>-->
-        <module>actuator</module>
+<!--        <module>actuator</module>-->
+        <module>empty</module>
     </modules>
 
     <dependencyManagement>
