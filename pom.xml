@@ -25,11 +25,11 @@
     </properties>
 
     <modules>
-        <module>lettuce</module>
+<!--        <module>lettuce</module>-->
 <!--        <module>web-flux</module>-->
 <!--        <module>basic</module>-->
 <!--        <module>mapper</module>-->
-<!--        <module>resilience4j</module>-->
+        <module>resilience4j</module>
 <!--        <module>actuator</module>-->
 <!--        <module>spring</module>-->
 <!--        <module>empty</module>-->
