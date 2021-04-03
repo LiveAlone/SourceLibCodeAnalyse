@@ -1,0 +1,76 @@
+package org.yqj.source.demo.data.demo;
+
+import com.google.common.collect.ImmutableMap;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariConfigMXBean;
+import com.zaxxer.hikari.HikariDataSource;
+import com.zaxxer.hikari.HikariPoolMXBean;
+import lombok.extern.slf4j.Slf4j;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Map;
+
+/**
+ * Description:
+ *
+ * @author yaoqijun
+ * @date 2021/4/4
+ * Email: yaoqijunmail@foxmail.com
+ */
+@Slf4j
+public class HikariConnectionPoolDemo {
+    public static void main(String[] args) {
+
+        // config
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+        config.setUsername("root");
+        config.setPassword("anywhere");
+        config.addDataSourceProperty("cachePrepStmts", "true");
+        config.addDataSourceProperty("prepStmtCacheSize", "250");
+        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+
+        config.setInitializationFailTimeout(10000);
+        config.setPoolName("localConnectTest");
+        config.setMaximumPoolSize(50);
+        config.setMaxLifetime(600000);
+        config.setConnectionTimeout(3000);
+
+        HikariDataSource ds = new HikariDataSource(config);
+
+        try {
+            Connection connection = ds.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from rule_info");
+            System.out.println(resultSet.toString());
+
+            String info = generatePoolInfo(ds);
+            System.out.println(info);
+
+            statement.close();
+            connection.close();
+        }catch (Exception e){
+            log.error("error gain connect :{}", e);
+        }
+
+        String info = generatePoolInfo(ds);
+        System.out.println(info);
+    }
+
+    private static String generatePoolInfo(HikariDataSource dataSource) {
+        HikariPoolMXBean poolMXBean = dataSource.getHikariPoolMXBean();
+        Map<String, Integer> poolBean = ImmutableMap.of("active", poolMXBean.getActiveConnections(),
+                "idle", poolMXBean.getIdleConnections(),
+                "total", poolMXBean.getTotalConnections(),
+                "threadWait", poolMXBean.getThreadsAwaitingConnection());
+        HikariConfigMXBean hikariConfigMXBean = dataSource.getHikariConfigMXBean();
+        Map<String, Long> configBean = ImmutableMap.of("maxNumSize", (long) hikariConfigMXBean.getMaximumPoolSize(),
+                "minIdle", (long) hikariConfigMXBean.getMinimumIdle(),
+                "idleTime", hikariConfigMXBean.getIdleTimeout(),
+                "connectionTimeout", hikariConfigMXBean.getConnectionTimeout(),
+                "validateTime", hikariConfigMXBean.getLeakDetectionThreshold());
+        return ImmutableMap.of("poolBean", poolBean, "configBean", configBean).toString();
+    }
+}
