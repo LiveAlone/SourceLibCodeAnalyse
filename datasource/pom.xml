@@ -15,6 +15,14 @@
     </parent>
 
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid</artifactId>-->
+<!--            <version>1.2.5</version>-->
+<!--        </dependency>-->
+
         <!-- data source pool connect -->
         <dependency>
             <groupId>com.zaxxer</groupId>
