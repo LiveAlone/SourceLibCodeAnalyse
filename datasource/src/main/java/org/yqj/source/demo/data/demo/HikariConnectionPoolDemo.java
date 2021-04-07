@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariConfigMXBean;
 import com.zaxxer.hikari.HikariDataSource;
 import com.zaxxer.hikari.HikariPoolMXBean;
+import com.zaxxer.hikari.pool.HikariPool;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
@@ -23,6 +24,8 @@ import java.util.Map;
 public class HikariConnectionPoolDemo {
     public static void main(String[] args) {
 
+        System.setProperty("com.zaxxer.hikari.blockUntilFilled", "true");
+
         // config
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:mysql://localhost:3306/test");
@@ -37,6 +40,7 @@ public class HikariConnectionPoolDemo {
         config.setMaximumPoolSize(50);
         config.setMaxLifetime(600000);
         config.setConnectionTimeout(3000);
+        config.setInitializationFailTimeout(10000);
 
         HikariDataSource ds = new HikariDataSource(config);
 
@@ -44,6 +48,9 @@ public class HikariConnectionPoolDemo {
             Connection connection = ds.getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from rule_info");
+            while (resultSet.next()){
+                System.out.println(resultSet.getString(2));
+            }
             System.out.println(resultSet.toString());
 
             String info = generatePoolInfo(ds);
