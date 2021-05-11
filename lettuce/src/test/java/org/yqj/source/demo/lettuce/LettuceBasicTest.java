@@ -22,8 +22,14 @@ public class LettuceBasicTest {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> stringStringStatefulRedisConnection = redisClient.connect();
         RedisCommands<String, String> redisCommands = stringStringStatefulRedisConnection.sync();
+        redisCommands.set("key", "keyValue");
         String result = redisCommands.get("key");
         System.out.println(result);
+
+        for (int a = 0; a < 1000; a++) {
+            redisCommands.set("key" + String.valueOf(a), "yaoqijun");
+        }
+
         stringStringStatefulRedisConnection.close();
         redisClient.shutdown();
     }
