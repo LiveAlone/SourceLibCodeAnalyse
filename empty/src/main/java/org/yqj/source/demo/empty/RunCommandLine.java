@@ -19,4 +19,9 @@ public class RunCommandLine implements CommandLineRunner{
     public void run(String... args) throws Exception {
         log.info("starting command line ...");
     }
+
+    public static void main(String[] args) {
+        Long a = 123123L;
+        System.out.println(a.hashCode());
+    }
 }
