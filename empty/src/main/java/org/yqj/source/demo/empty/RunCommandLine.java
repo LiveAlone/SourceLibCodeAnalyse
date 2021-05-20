@@ -4,6 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import javax.swing.text.BadLocationException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Description:
  *
@@ -20,8 +24,10 @@ public class RunCommandLine implements CommandLineRunner{
         log.info("starting command line ...");
     }
 
+    private static final Pattern BLANK_PATTERN = Pattern.compile("\\s{5,}");
+
     public static void main(String[] args) {
-        Long a = 123123L;
-        System.out.println(a.hashCode());
+        String test = "AAAAA          BBBB \n\n\n\n\n\n\n cccc";
+        System.out.println(BLANK_PATTERN.matcher(test).replaceAll("  "));
     }
 }
