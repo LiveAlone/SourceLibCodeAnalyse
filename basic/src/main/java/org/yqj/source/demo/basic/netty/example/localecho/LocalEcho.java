@@ -19,6 +19,7 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.DefaultEventLoopGroup;
 import io.netty.channel.EventLoopGroup;
@@ -71,7 +72,7 @@ public final class LocalEcho {
                   @Override
                   public void initChannel(LocalChannel ch) throws Exception {
                       ch.pipeline().addLast(
-                              new LoggingHandler(LogLevel.INFO),
+                              (ChannelHandler) new LoggingHandler(LogLevel.INFO),
                               new LocalEchoClientHandler());
                   }
               });
