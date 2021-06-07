@@ -2,11 +2,8 @@ package org.yqj.source.demo.spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
-import org.yqj.source.demo.spring.core.event.BaseEvent;
-import org.yqj.source.demo.spring.core.event.BaseEventChild;
-import org.yqj.source.demo.spring.core.event.BaseEventSubChild;
+import org.yqj.source.demo.spring.core.event.FruitEventPublisherService;
 
 import javax.annotation.Resource;
 
@@ -19,16 +16,14 @@ import javax.annotation.Resource;
  */
 @Component
 @Slf4j
-public class RunCommandLine implements CommandLineRunner{
+public class RunCommandLine implements CommandLineRunner {
 
     @Resource
-    private ApplicationEventPublisher applicationEventPublisher;
+    private FruitEventPublisherService fruitEventPublisherService;
 
     @Override
     public void run(String... args) throws Exception {
         log.info("starting command line ...");
-        log.info("*************** begin");
-        applicationEventPublisher.publishEvent(new BaseEventChild(123, "yaoqijun"));
-        log.info("*************** end");
+        fruitEventPublisherService.publishEvent();
     }
 }

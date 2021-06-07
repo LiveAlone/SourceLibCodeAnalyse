@@ -32,8 +32,8 @@
 <!--        <module>mapper</module>-->
 <!--        <module>resilience4j</module>-->
 <!--        <module>actuator</module>-->
-<!--        <module>spring</module>-->
-        <module>empty</module>
+        <module>spring</module>
+<!--        <module>empty</module>-->
     </modules>
 
     <dependencyManagement>

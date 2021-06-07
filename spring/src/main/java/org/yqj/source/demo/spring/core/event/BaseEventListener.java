@@ -1,5 +1,6 @@
 package org.yqj.source.demo.spring.core.event;
 
+import com.sun.tools.corba.se.idl.constExpr.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -16,17 +17,22 @@ import org.springframework.stereotype.Component;
 public class BaseEventListener {
 
     @EventListener
-    public void listenerBase(BaseEvent baseEvent) {
-        log.info("base event listener gain base event :{}", baseEvent);
+    public void fruitListener(FruitEvent fruitEvent) {
+        log.info("fruit event listener {} get event {}", Thread.currentThread().getName(), fruitEvent);
     }
 
     @EventListener
-    public void listChildBase(BaseEventChild baseEventChild) {
-        log.info("base event child listener base event :{}", baseEventChild);
+    public void appleListener(AppleEvent appleEvent) {
+        log.info("apple event listener {} get event {}", Thread.currentThread().getName(), appleEvent);
     }
 
     @EventListener
-    public void listSubChildBase(BaseEventSubChild baseEventSubChild) {
-        log.info("base event child listener base event :{}", baseEventSubChild);
+    public void orangeListener(OrangeEvent orangeEvent) {
+        log.info("orange event listener {} get event {}", Thread.currentThread().getName(), orangeEvent);
+    }
+
+    @EventListener
+    public void northAppleListener(NorthAppleEvent northAppleEvent) {
+        log.info("north apple event listener {} get event {}", Thread.currentThread().getName(), northAppleEvent);
     }
 }
