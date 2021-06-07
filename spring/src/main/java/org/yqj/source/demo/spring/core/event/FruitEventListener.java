@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class BaseEventListener {
+public class FruitEventListener {
 
     @EventListener
     public void fruitListener(FruitEvent fruitEvent) {
