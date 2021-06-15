@@ -34,9 +34,9 @@
 <!--        <module>resilience4j</module>-->
 <!--        <module>actuator</module>-->
 <!--        <module>spring</module>-->
-<!--        <module>empty</module>-->
+        <module>empty</module>
 <!--        <module>init</module>-->
-        <module>sentinel</module>
+<!--        <module>sentinel</module>-->
     </modules>
 
     <dependencyManagement>
