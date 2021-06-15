@@ -23,7 +23,7 @@ import java.util.List;
 public class SentinelExample {
 
     public static void main(String[] args) throws Exception{
-//        initFlowRules();
+        initFlowRules();
         helloWorld();
     }
 
@@ -59,7 +59,7 @@ public class SentinelExample {
         FlowRule rule = new FlowRule();
         rule.setResource("HelloWorld");
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        rule.setCount(20);
+        rule.setCount(5);
         rules.add(rule);
         FlowRuleManager.loadRules(rules);
     }
