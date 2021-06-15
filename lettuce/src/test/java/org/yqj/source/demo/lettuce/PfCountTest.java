@@ -3,6 +3,7 @@ package org.yqj.source.demo.lettuce;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -14,6 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @date 2021/2/1
  * Email: yaoqijunmail@foxmail.com
  */
+@Ignore
 public class PfCountTest {
 
     @Test

@@ -15,6 +15,7 @@ import org.junit.Test;
  * @date 2021/2/22
  * Email: yaoqijunmail@foxmail.com
  */
+@Ignore
 public class RedisBasicTest {
 
     @Test

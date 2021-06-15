@@ -4,9 +4,12 @@ import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisFuture;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Ignore;
 import org.junit.Test;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 /**
  * Created by yaoqijun.
@@ -14,11 +17,24 @@ import reactor.core.publisher.Mono;
  * Email:yaoqj@terminus.io
  * Descirbe:
  */
+@Slf4j
 public class LettuceBasicTest {
 
     @Test
     @Ignore
-    public void testGetRedisKey() throws Exception{
+    public void testKeysScan() throws Exception {
+        RedisClient redisClient = RedisClient.create("redis://localhost/0");
+        StatefulRedisConnection<String, String> stringStringStatefulRedisConnection = redisClient.connect();
+        RedisCommands<String, String> redisCommands = stringStringStatefulRedisConnection.sync();
+        List<String> keys = redisCommands.keys("*");
+        keys.forEach(key -> {
+            log.info("redis key gain from key:{}, value:{} ", key, redisCommands.get(key));
+        });
+    }
+
+    @Test
+    @Ignore
+    public void testGetRedisKey() throws Exception {
         RedisClient redisClient = RedisClient.create("redis://localhost/0");
         StatefulRedisConnection<String, String> stringStringStatefulRedisConnection = redisClient.connect();
         RedisCommands<String, String> redisCommands = stringStringStatefulRedisConnection.sync();
@@ -58,7 +74,7 @@ public class LettuceBasicTest {
 
         connection.reactive().set("key2", "Hello world").block();
         Mono<String> mono = connection.reactive().get("key2");
-        mono.subscribe(s->{
+        mono.subscribe(s -> {
             System.out.println("****** get key value is " + s);
             System.out.println("current thread is " + Thread.currentThread().getName());
         });
