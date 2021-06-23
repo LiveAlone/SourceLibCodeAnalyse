@@ -2,7 +2,7 @@ package org.yqj.source.demo.spring.core.event;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
+@Order(4)
 public class FruitBasicEventListener implements ApplicationListener<FruitEvent> {
 
     @Override

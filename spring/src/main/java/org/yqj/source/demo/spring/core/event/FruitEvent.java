@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationEvent;
  * @date 2021/6/7
  * Email: yaoqijunmail@foxmail.com
  */
-@ToString
+@ToString(callSuper = true)
 public class FruitEvent extends ApplicationEvent {
 
     @Getter

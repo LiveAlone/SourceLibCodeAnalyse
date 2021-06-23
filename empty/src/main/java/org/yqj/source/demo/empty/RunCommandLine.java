@@ -25,4 +25,8 @@ public class RunCommandLine implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
     }
+
+    public static void main(String[] args) {
+        System.out.println(String.format("test123123-%s", null));
+    }
 }

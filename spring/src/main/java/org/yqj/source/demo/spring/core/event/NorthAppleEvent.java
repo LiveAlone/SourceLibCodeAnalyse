@@ -10,7 +10,7 @@ import lombok.ToString;
  * Email: yaoqijunmail@foxmail.com
  */
 @ToString(callSuper = true)
-public class NorthAppleEvent extends AppleEvent{
+public class NorthAppleEvent extends AppleEvent {
 
     public NorthAppleEvent(Object source, String color) {
         super(source, color, "north");

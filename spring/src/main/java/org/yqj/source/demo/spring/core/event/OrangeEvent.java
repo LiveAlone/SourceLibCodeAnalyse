@@ -1,7 +1,6 @@
 package org.yqj.source.demo.spring.core.event;
 
 import lombok.Getter;
-import lombok.ToString;
 
 /**
  * Description:
@@ -10,7 +9,6 @@ import lombok.ToString;
  * @date 2021/6/7
  * Email: yaoqijunmail@foxmail.com
  */
-@ToString(callSuper = true)
 public class OrangeEvent extends FruitEvent {
 
     @Getter

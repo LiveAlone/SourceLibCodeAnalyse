@@ -18,12 +18,12 @@ public class FruitEventPublisherService implements ApplicationEventPublisherAwar
 
     private ApplicationEventPublisher applicationEventPublisher;
 
-    public void publishEvent(){
+    public void publishEvent() {
         log.info("fruit event publish service start, thread: {}", Thread.currentThread().getName());
-        applicationEventPublisher.publishEvent(new FruitEvent(this, "common"));
+//        applicationEventPublisher.publishEvent(new FruitEvent(this, "common"));
 //        applicationEventPublisher.publishEvent(new AppleEvent(this, "common", "shandong"));
 //        applicationEventPublisher.publishEvent(new OrangeEvent(this, "common", true));
-//        applicationEventPublisher.publishEvent(new NorthAppleEvent(this, "common"));
+        applicationEventPublisher.publishEvent(new NorthAppleEvent(this, "common"));
     }
 
     @Override

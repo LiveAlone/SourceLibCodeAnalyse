@@ -1,8 +1,8 @@
 package org.yqj.source.demo.spring.core.event;
 
-import com.sun.tools.corba.se.idl.constExpr.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,11 +17,13 @@ import org.springframework.stereotype.Component;
 public class FruitEventListener {
 
     @EventListener
+    @Order(2)
     public void fruitListener(FruitEvent fruitEvent) {
         log.info("fruit event listener {} get event {}", Thread.currentThread().getName(), fruitEvent);
     }
 
     @EventListener
+    @Order(1)
     public void appleListener(AppleEvent appleEvent) {
         log.info("apple event listener {} get event {}", Thread.currentThread().getName(), appleEvent);
     }
@@ -32,6 +34,7 @@ public class FruitEventListener {
     }
 
     @EventListener
+    @Order(0)
     public void northAppleListener(NorthAppleEvent northAppleEvent) {
         log.info("north apple event listener {} get event {}", Thread.currentThread().getName(), northAppleEvent);
     }
