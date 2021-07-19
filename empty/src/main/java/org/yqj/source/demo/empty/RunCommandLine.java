@@ -1,15 +1,8 @@
 package org.yqj.source.demo.empty;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.util.NumberUtils;
-
-import javax.swing.text.BadLocationException;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Description:
@@ -20,13 +13,17 @@ import java.util.regex.Pattern;
  */
 @Component
 @Slf4j
-public class RunCommandLine implements CommandLineRunner{
+public class RunCommandLine implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
     }
 
     public static void main(String[] args) {
-        System.out.println(String.format("test123123-%s", null));
+        int a = 100;
+        for (int i = 0; i < 10; i++) {
+            a += 1;
+        }
+        System.out.println(a);
     }
 }
