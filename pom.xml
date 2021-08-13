@@ -37,7 +37,8 @@
 <!--        <module>empty</module>-->
 <!--        <module>init</module>-->
 <!--        <module>sentinel</module>-->
-        <module>graphQl</module>
+<!--        <module>graphQl</module>-->
+        <module>graphQlBasic</module>
     </modules>
 
     <dependencyManagement>
