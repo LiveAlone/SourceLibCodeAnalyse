@@ -34,11 +34,11 @@
 <!--        <module>resilience4j</module>-->
 <!--        <module>actuator</module>-->
 <!--        <module>spring</module>-->
-<!--        <module>empty</module>-->
+        <module>empty</module>
 <!--        <module>init</module>-->
 <!--        <module>sentinel</module>-->
 <!--        <module>graphQl</module>-->
-        <module>graphQlBasic</module>
+<!--        <module>graphQlBasic</module>-->
     </modules>
 
     <dependencyManagement>
