@@ -13,9 +13,15 @@ repositories {
 }
 
 dependencies {
+//    compileOnly("org.projectlombok:lombok:1.8.20")
+//    annotationProcessor("org.projectlombok:lombok:1.8.20")
+
     // guava
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:30.1-jre")
+//    implementation("org.projectlombok:lombok:1.18.20")
+
+    // logback dependency
+
 
     // Use JUnit test framework.
     testImplementation("junit:junit:4.13.2")
