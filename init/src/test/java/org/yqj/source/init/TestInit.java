@@ -1,5 +1,6 @@
 package org.yqj.net.transport;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,17 +11,17 @@ import org.junit.Test;
  * Descirbe:
  */
 
-//@Slf4j
+@Slf4j
 public class TestInit {
 
-//    @Test
-//    public void testLogLevel() {
-//        log.trace("this is trace info");
-//        log.debug("this is debug info");
-//        log.info("this is main empty content");
-//        log.warn("this is warn info");
-//        log.error("this is error info");
-//    }
+    @Test
+    public void testLogLevel() {
+        log.trace("this is trace info");
+        log.debug("this is debug info");
+        log.info("this is main empty content");
+        log.warn("this is warn info");
+        log.error("this is error info");
+    }
 
     @Test
     public void testNone() {
