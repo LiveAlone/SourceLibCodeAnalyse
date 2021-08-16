@@ -3,12 +3,15 @@
  */
 package org.yqj.source.app;
 
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
 
-class MessageUtilsTest {
-    @Test void testGetMessage() {
+import static org.junit.Assert.assertEquals;
+
+public class MessageUtilsTest {
+
+    @Test
+    public void testGetMessage() {
         assertEquals("Hello      World!", MessageUtils.getMessage());
     }
 }

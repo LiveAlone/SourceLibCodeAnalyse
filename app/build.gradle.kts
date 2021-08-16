@@ -6,12 +6,6 @@ plugins {
     id("org.yqj.source.java-application-conventions")
 }
 
-dependencies {
-    implementation("org.apache.commons:commons-text")
-    implementation(project(":utilities"))
-}
-
 application {
-    // Define the main class for the application.
     mainClass.set("org.yqj.source.app.App")
 }

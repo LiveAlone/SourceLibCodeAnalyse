@@ -3,19 +3,8 @@
  */
 package org.yqj.source.app;
 
-import org.yqj.source.list.LinkedList;
-
-import static org.yqj.source.utilities.StringUtils.join;
-import static org.yqj.source.utilities.StringUtils.split;
-import static org.yqj.source.app.MessageUtils.getMessage;
-
-import org.apache.commons.text.WordUtils;
-
 public class App {
     public static void main(String[] args) {
-        LinkedList tokens;
-        tokens = split(getMessage());
-        String result = join(tokens);
-        System.out.println(WordUtils.capitalize(result));
+        System.out.println("hello world !!");
     }
 }

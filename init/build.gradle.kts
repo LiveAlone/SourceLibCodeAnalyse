@@ -3,5 +3,5 @@
  */
 
 plugins {
-    id("org.yqj.source.java-library-conventions")
+    id("org.yqj.source.java-common-conventions")
 }

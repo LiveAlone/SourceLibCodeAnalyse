@@ -13,16 +13,10 @@ repositories {
 }
 
 dependencies {
-    constraints {
-        // Define dependency versions as constraints
-        implementation("org.apache.commons:commons-text:1.9")
-    }
+    // guava
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation("com.google.guava:guava:30.1-jre")
 
-    // Use JUnit Jupiter for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
-}
-
-tasks.test {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
+    // Use JUnit test framework.
+    testImplementation("junit:junit:4.13.2")
 }
