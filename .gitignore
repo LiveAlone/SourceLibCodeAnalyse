@@ -30,3 +30,6 @@ dependency-reduced-pom.xml
 *.perm
 flyway.properties
 _book/
+
+.gradle/
+build
