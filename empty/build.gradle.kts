@@ -3,9 +3,9 @@
  */
 
 plugins {
-    id("org.springframework.boot") version("2.5.3")
-    id("io.spring.dependency-management") version("1.0.11.RELEASE")
-    java
+    id("org.yqj.source.java-spring-conventions")
+    id("org.springframework.boot") version ("2.5.3")
+    id("io.spring.dependency-management") version ("1.0.11.RELEASE")
 }
 
 repositories {
@@ -13,10 +13,19 @@ repositories {
 }
 
 dependencies {
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    testCompileOnly("org.projectlombok:lombok")
+    testAnnotationProcessor("org.projectlombok:lombok")
+
+    implementation("com.google.guava:guava:30.1-jre")
+
     implementation("org.springframework.boot:spring-boot-starter-web")
-    testImplementation ("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-tasks.test{
+tasks.test {
     useJUnitPlatform()
 }

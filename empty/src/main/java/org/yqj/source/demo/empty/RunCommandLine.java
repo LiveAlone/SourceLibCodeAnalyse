@@ -1,5 +1,6 @@
 package org.yqj.source.demo.empty;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +12,10 @@ import org.springframework.stereotype.Component;
  * Email: yaoqijunmail@foxmail.com
  */
 @Component
-//@Slf4j
+@Slf4j
 public class RunCommandLine implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("run command line starting ... ");
+        log.info("run command line starting ... ");
     }
 }

@@ -3,9 +3,10 @@
  */
 
 plugins {
-//    id("org.springframework.boot") version("2.5.3")
-//    id("io.spring.dependency-management") version("1.0.11.RELEASE")
     java
+    // todo spring plugin how to combine user definition
+//    id("org.springframework.boot") version ("2.2.3.RELEASE") apply false
+//    id("io.spring.dependency-management") version ("1.0.10.RELEASE") apply false
 }
 
 repositories {
@@ -20,6 +21,6 @@ repositories {
 //    testCompileOnly("org.projectlombok:lombok")
 //    testAnnotationProcessor("org.projectlombok:lombok")
 //
-//    // guava
+//     guava
 //    implementation("com.google.guava:guava")
 //}
