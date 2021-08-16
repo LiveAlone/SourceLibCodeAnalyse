@@ -1,4 +1,4 @@
-package org.yqj.source.init;
+package org.yqj.source.cmd;
 
 import lombok.extern.slf4j.Slf4j;
 
