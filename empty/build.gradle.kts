@@ -3,9 +3,20 @@
  */
 
 plugins {
-    id("org.yqj.source.java-common-conventions")
+    id("org.springframework.boot") version("2.5.3")
+    id("io.spring.dependency-management") version("1.0.11.RELEASE")
+    java
+}
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
-    implementation("org.apache.commons:commons-text")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    testImplementation ("org.springframework.boot:spring-boot-starter-test")
+}
+
+tasks.test{
+    useJUnitPlatform()
 }

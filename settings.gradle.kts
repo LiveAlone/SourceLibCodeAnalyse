@@ -9,4 +9,5 @@
 
 rootProject.name = "source"
 include("app")
-include("init")
+//include("init")
+include("empty")
