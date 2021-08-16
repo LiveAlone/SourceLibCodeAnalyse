@@ -15,5 +15,6 @@ import org.springframework.stereotype.Component;
 public class RunCommandLine implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("run command line starting ... ");
     }
 }
