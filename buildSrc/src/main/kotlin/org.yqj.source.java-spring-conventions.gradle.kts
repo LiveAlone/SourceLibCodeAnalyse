@@ -20,6 +20,5 @@ repositories {
 //    testCompileOnly("org.projectlombok:lombok")
 //    testAnnotationProcessor("org.projectlombok:lombok")
 //
-//     guava
 //    implementation("com.google.guava:guava")
 //}
