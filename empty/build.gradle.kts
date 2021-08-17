@@ -5,7 +5,14 @@
 plugins {
     id("org.yqj.source.java-spring-conventions")
     id("org.springframework.boot") version "2.5.3"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+}
+
+apply(plugin = "io.spring.dependency-management")
+
+the<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension>().apply {
+    imports {
+        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    }
 }
 
 repositories {
