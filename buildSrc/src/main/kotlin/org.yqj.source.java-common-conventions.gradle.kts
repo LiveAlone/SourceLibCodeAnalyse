@@ -1,9 +1,9 @@
+import org.gradle.api.publish.maven.internal.publisher.MavenLocalPublisher
 
 plugins {
     java
+    `maven-publish`
 }
-
-version = "1.0.0"
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -34,4 +34,12 @@ dependencies {
     // lombok
     testCompileOnly("org.projectlombok:lombok:1.18.20")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.20")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
