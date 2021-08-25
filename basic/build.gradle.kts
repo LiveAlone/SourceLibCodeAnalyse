@@ -17,5 +17,17 @@ publishing {
 }
 
 dependencies {
-    implementation("")
+    implementation("io.netty:netty-all:4.1.66.Final")
+    implementation("joda-time:joda-time:2.10.10")
+
+    implementation("org.bouncycastle:bcpkix-jdk15on:1.58")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.58")
+}
+
+tasks.withType<JavaCompile>() {
+    options.compilerArgs.add("-XDignore.symbol.file")
+//    options.compilerArgs.add("-Xlint:deprecation")
+    options.isFork = true
+    options.forkOptions.executable = "javac"
+    options.encoding = "UTF-8"
 }

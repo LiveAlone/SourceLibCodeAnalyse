@@ -1,10 +1,5 @@
 package org.yqj.source.demo.basic.guava;
 
-import com.google.common.hash.BloomFilter;
-import com.google.common.hash.Funnel;
-import com.google.common.hash.Funnels;
-import com.google.common.hash.PrimitiveSink;
-
 /**
  * Description:
  *
