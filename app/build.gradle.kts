@@ -9,3 +9,13 @@ plugins {
 application {
     mainClass.set("org.yqj.source.app.App")
 }
+
+publishing {
+    publications {
+        getByName<MavenPublication>("maven") {
+            pom {
+                description.set("org yqj source app info")
+            }
+        }
+    }
+}

@@ -11,14 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class EmptyMain {
-
     public static void main(String[] args) {
-        log.trace("this is trace info");
-        log.debug("this is debug info");
-        log.info("this is main empty content");
-        log.warn("this is warn info");
-        log.error("this is error info");
-
-        System.out.println("hello world");
+        log.info("this is init project");
     }
 }

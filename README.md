@@ -9,3 +9,4 @@
 2. web-flux reactive 响应式web 服务工具配置方式
 3. basic 基础功能配置
 4. mapper beanMapper 功能
+5. app 构建可运行应用

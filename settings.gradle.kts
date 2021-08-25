@@ -9,7 +9,8 @@
 
 rootProject.name = "source"
 
-//include("app")
+include("app")
 //include("init")
+//include("cmd")
+
 //include("empty")
-include("cmd")

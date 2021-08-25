@@ -40,6 +40,16 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
+            pom {
+                description.set("yqj source comment info")
+                developers {
+                    developer {
+                        id.set("yqj")
+                        name.set("yaoqijun")
+                        email.set("yaoqijunmail@foxmail.com")
+                    }
+                }
+            }
         }
     }
 }

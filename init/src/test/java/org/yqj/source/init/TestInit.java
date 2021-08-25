@@ -13,18 +13,9 @@ import org.junit.Test;
 
 @Slf4j
 public class TestInit {
-
-    @Test
-    public void testLogLevel() {
-        log.trace("this is trace info");
-        log.debug("this is debug info");
-        log.info("this is main empty content");
-        log.warn("this is warn info");
-        log.error("this is error info");
-    }
-
     @Test
     public void testNone() {
+        log.info("task none condition");
         Assert.assertEquals(1L, 1L);
     }
 }
