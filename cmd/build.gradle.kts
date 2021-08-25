@@ -5,11 +5,3 @@
 plugins {
     id("org.yqj.source.java-common-conventions")
 }
-
-tasks.register("hello") {
-    group = "person"
-    description = "this is hello description"
-    doLast {
-        println("hello world task finish !!")
-    }
-}
