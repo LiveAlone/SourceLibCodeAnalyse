@@ -10,15 +10,12 @@ publishing {
     publications {
         getByName<MavenPublication>("maven") {
             pom {
-                description.set("org yqj source init info")
+                description.set("org yqj source resilience4j info")
             }
         }
     }
 }
 
 dependencies {
-
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.4.2.Final")
-
-    implementation("org.mapstruct:mapstruct:1.4.2.Final")
+    implementation("io.github.resilience4j:resilience4j-all:1.6.1")
 }

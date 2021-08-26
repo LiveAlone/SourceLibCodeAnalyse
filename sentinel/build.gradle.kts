@@ -10,15 +10,12 @@ publishing {
     publications {
         getByName<MavenPublication>("maven") {
             pom {
-                description.set("org yqj source init info")
+                description.set("org yqj source resilience4j info")
             }
         }
     }
 }
 
 dependencies {
-
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.4.2.Final")
-
-    implementation("org.mapstruct:mapstruct:1.4.2.Final")
+    implementation("com.alibaba.csp:sentinel-core:1.8.2")
 }

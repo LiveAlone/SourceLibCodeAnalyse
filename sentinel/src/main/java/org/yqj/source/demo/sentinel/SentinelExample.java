@@ -27,7 +27,6 @@ public class SentinelExample {
         helloWorld();
     }
 
-
     private static void helloWorld() throws Exception{
         while (true) {
             Entry entry = null;

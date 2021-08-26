@@ -10,3 +10,4 @@
 3. basic 基础功能配置
 4. mapper beanMapper 功能
 5. app 构建可运行应用
+6. resilience4j 熔断 限时操作
