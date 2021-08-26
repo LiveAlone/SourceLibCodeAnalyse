@@ -1,4 +1,4 @@
-package org.yqj.source.demo.data.demo;
+package org.yqj.source.demo.data;
 
 import com.google.common.collect.ImmutableMap;
 import com.zaxxer.hikari.HikariConfig;

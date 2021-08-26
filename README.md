@@ -16,5 +16,7 @@ spring 依赖配置管理
 
 0. 项目模板
    * empty (spring gradle 插件, spring 项目管理模板)
-1. spring spring 基础功能
-2. 
+1. spring 基础功能
+2. actuator prometheus 监控
+3. graphQL basic spring 相关使用方式
+4. web-flux web Reactive 响应式编程
