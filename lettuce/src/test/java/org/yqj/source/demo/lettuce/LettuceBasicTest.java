@@ -18,6 +18,7 @@ import java.util.List;
  * Descirbe:
  */
 @Slf4j
+@Ignore
 public class LettuceBasicTest {
 
     @Test

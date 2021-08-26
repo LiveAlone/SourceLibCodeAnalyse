@@ -1,12 +1,9 @@
 package org.yqj.source.demo.lettuce;
 
-import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Ignore;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-
-import java.util.List;
 
 /**
  * Description:
@@ -16,6 +13,7 @@ import java.util.List;
  * Email: yaoqijunmail@foxmail.com
  */
 @Slf4j
+@Ignore
 public class JedisBasicTest {
 
     @Test

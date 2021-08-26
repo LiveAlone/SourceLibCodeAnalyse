@@ -12,8 +12,8 @@ rootProject.name = "source"
 //include("app")
 include("init")
 //include("cmd")
-
-include("basic")
+//include("basic")
+//include("lettuce")
 
 
 //include("empty")
