@@ -11,3 +11,9 @@ plugins {
 repositories {
     gradlePluginPortal()
 }
+
+dependencies {
+    // spring plugin version
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.5.4")
+
+}

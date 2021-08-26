@@ -4,21 +4,29 @@
 
 plugins {
     java
-//    id("org.springframework.boot") version ("2.2.3.RELEASE") apply false
-//    id("io.spring.dependency-management") version ("1.0.10.RELEASE") apply false
+    id("org.springframework.boot")
 }
+
+apply(plugin = "io.spring.dependency-management")
 
 repositories {
     mavenCentral()
 }
 
-//dependencies {
-//
-//    compileOnly("org.projectlombok:lombok")
-//    annotationProcessor("org.projectlombok:lombok")
-//
-//    testCompileOnly("org.projectlombok:lombok")
-//    testAnnotationProcessor("org.projectlombok:lombok")
-//
-//    implementation("com.google.guava:guava")
-//}
+dependencies {
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    implementation("com.google.guava:guava:30.1-jre")
+    implementation("org.springframework.boot:spring-boot-starter")
+
+    testCompileOnly("org.projectlombok:lombok")
+    testAnnotationProcessor("org.projectlombok:lombok")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
