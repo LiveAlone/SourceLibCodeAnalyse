@@ -4,35 +4,14 @@
 
 plugins {
     id("org.yqj.source.java-spring-conventions")
-    id("org.springframework.boot") version "2.5.3"
 }
 
-apply(plugin = "io.spring.dependency-management")
-
-the<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension>().apply {
-    imports {
-        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+publishing {
+    publications {
+        getByName<MavenPublication>("maven") {
+            pom {
+                description.set("org yqj source spring info")
+            }
+        }
     }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-
-    compileOnly("org.projectlombok:lombok")
-    annotationProcessor("org.projectlombok:lombok")
-
-    testCompileOnly("org.projectlombok:lombok")
-    testAnnotationProcessor("org.projectlombok:lombok")
-
-    implementation("com.google.guava:guava:30.1-jre")
-
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
