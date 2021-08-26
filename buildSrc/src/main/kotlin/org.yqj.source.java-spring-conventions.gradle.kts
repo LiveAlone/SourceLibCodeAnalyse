@@ -5,6 +5,7 @@
 plugins {
     java
     id("org.springframework.boot")
+    `maven-publish`
 }
 
 apply(plugin = "io.spring.dependency-management")
@@ -29,4 +30,22 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            pom {
+                description.set("yqj source spring info")
+                developers {
+                    developer {
+                        id.set("yqj")
+                        name.set("yaoqijun")
+                        email.set("yaoqijunmail@foxmail.com")
+                    }
+                }
+            }
+        }
+    }
 }
