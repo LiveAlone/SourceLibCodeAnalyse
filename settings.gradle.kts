@@ -17,9 +17,9 @@ include("init")
 //include("mapper")
 //include("resilience4j")
 //include("sentinel")
+//include("graphQlBasic")
 
-
-include("empty")
+//include("empty")
 //include("spring")
 //include("actuator")
 //include("datasource")
