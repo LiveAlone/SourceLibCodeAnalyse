@@ -1,13 +1,13 @@
-package org.yqj.source.demo.mapper.struct.mapper;
+package org.yqj.source.demo.mapper.mapper;
 
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
-import org.yqj.source.demo.mapper.struct.beans.user.Score;
-import org.yqj.source.demo.mapper.struct.beans.user.Student;
-import org.yqj.source.demo.mapper.struct.beans.user.UserInfo;
+import org.yqj.source.demo.mapper.beans.user.Student;
+import org.yqj.source.demo.mapper.beans.user.UserInfo;
+import org.yqj.source.demo.mapper.beans.user.Score;
 
 import java.util.List;
 

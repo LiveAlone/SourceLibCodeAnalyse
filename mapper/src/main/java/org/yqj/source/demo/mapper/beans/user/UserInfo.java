@@ -1,4 +1,4 @@
-package org.yqj.source.demo.mapper.struct.beans.user;
+package org.yqj.source.demo.mapper.beans.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Score {
+public class UserInfo {
 
-    private Integer score;
+    private String name;
 
 }

@@ -1,13 +1,12 @@
-package org.yqj.source.demo.mapper.struct;
+package org.yqj.source.demo.mapper;
 
-import org.yqj.source.demo.mapper.struct.beans.car.Car;
-import org.yqj.source.demo.mapper.struct.beans.car.CarDto;
-import org.yqj.source.demo.mapper.struct.beans.car.Person;
-import org.yqj.source.demo.mapper.struct.beans.user.Score;
-import org.yqj.source.demo.mapper.struct.beans.user.Student;
-import org.yqj.source.demo.mapper.struct.beans.user.UserInfo;
-import org.yqj.source.demo.mapper.struct.mapper.CarMapper;
-import org.yqj.source.demo.mapper.struct.mapper.UserMapper;
+import org.yqj.source.demo.mapper.beans.car.CarDto;
+import org.yqj.source.demo.mapper.beans.car.Person;
+import org.yqj.source.demo.mapper.beans.user.Score;
+import org.yqj.source.demo.mapper.beans.user.Student;
+import org.yqj.source.demo.mapper.mapper.CarMapper;
+import org.yqj.source.demo.mapper.mapper.UserMapper;
+import org.yqj.source.demo.mapper.beans.car.Car;
 
 /**
  * Description:

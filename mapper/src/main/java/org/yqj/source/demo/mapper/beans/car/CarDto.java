@@ -1,4 +1,4 @@
-package org.yqj.source.demo.mapper.struct.beans.user;
+package org.yqj.source.demo.mapper.beans.car;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,16 +8,20 @@ import lombok.NoArgsConstructor;
  * Description:
  *
  * @author yaoqijun
- * @date 2020/9/11
+ * @date 2020/9/9
  * Email: yaoqijunmail@foxmail.com
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+public class CarDto {
 
-    private String name;
+    private String make;
 
-    private Integer score;
+    private int seatCount;
+
+    private String type;
+
+    private PersonDto person;
 
 }

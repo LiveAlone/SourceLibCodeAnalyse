@@ -14,6 +14,6 @@ include("init")
 //include("cmd")
 //include("basic")
 //include("lettuce")
-
+include("mapper")
 
 //include("empty")

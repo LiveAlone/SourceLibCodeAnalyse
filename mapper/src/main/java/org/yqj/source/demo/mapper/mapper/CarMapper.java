@@ -1,14 +1,14 @@
-package org.yqj.source.demo.mapper.struct.mapper;
+package org.yqj.source.demo.mapper.mapper;
 
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
-import org.yqj.source.demo.mapper.struct.beans.car.Car;
-import org.yqj.source.demo.mapper.struct.beans.car.CarDto;
-import org.yqj.source.demo.mapper.struct.beans.car.Person;
-import org.yqj.source.demo.mapper.struct.beans.car.PersonDto;
+import org.yqj.source.demo.mapper.beans.car.CarDto;
+import org.yqj.source.demo.mapper.beans.car.Person;
+import org.yqj.source.demo.mapper.beans.car.Car;
+import org.yqj.source.demo.mapper.beans.car.PersonDto;
 
 /**
  * Description:

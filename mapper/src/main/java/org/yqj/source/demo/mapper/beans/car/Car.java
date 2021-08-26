@@ -1,4 +1,4 @@
-package org.yqj.source.demo.mapper.struct.beans.car;
+package org.yqj.source.demo.mapper.beans.car;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
