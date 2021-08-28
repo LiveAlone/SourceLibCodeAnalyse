@@ -5,7 +5,6 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariConfigMXBean;
 import com.zaxxer.hikari.HikariDataSource;
 import com.zaxxer.hikari.HikariPoolMXBean;
-import com.zaxxer.hikari.pool.HikariPool;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
@@ -48,7 +47,7 @@ public class HikariConnectionPoolDemo {
             Connection connection = ds.getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from rule_info");
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 System.out.println(resultSet.getString(2));
             }
             System.out.println(resultSet.toString());
@@ -58,7 +57,7 @@ public class HikariConnectionPoolDemo {
 
             statement.close();
             connection.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error("error gain connect :{}", e);
         }
 

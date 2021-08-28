@@ -21,7 +21,7 @@ dependencies {
     implementation("mysql:mysql-connector-java:8.0.26")
 
     // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
-    implementation("com.zaxxer:HikariCP:5.0.0")
+    implementation("com.zaxxer:HikariCP:4.0.3")
 
     // https://mvnrepository.com/artifact/com.alibaba/druid
     implementation("com.alibaba:druid:1.2.6")
