@@ -10,7 +10,7 @@
 rootProject.name = "source"
 
 //include("app")
-include("init")
+//include("init")
 //include("cmd")
 //include("basic")
 //include("lettuce")
@@ -24,3 +24,4 @@ include("init")
 //include("actuator")
 //include("datasource")
 //include("web-flux")
+include("none")
