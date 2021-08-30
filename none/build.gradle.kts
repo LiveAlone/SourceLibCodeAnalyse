@@ -1,6 +1,6 @@
 
-tasks.register("hello") {
+tasks.create("hello") {
     doLast {
-        println("hello world content")
+        println("hello context")
     }
 }
