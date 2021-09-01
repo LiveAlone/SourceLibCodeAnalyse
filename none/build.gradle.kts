@@ -1,7 +1,7 @@
 
-tasks.register("hello") {
+tasks.create("hello") {
     doLast {
-        println("this is hello world content")
+        val content = "hello world content all"
+        println(content)
     }
 }
-
