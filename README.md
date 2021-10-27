@@ -4,13 +4,13 @@
 
 0. 项目模板 
    * init (依赖guava 项目启动模板)
-   * cmd 命令行，demo 测试场景
-1. lettuce redis reactive 集成客户端配置
-2. web-flux reactive 响应式web 服务工具配置方式
-3. basic 基础功能配置
-4. mapper beanMapper 功能
-5. app 构建可运行应用
-6. resilience4j 熔断 限时操作
+1. cmd 命令行，demo 测试, 算法代码
+2. lettuce redis reactive 集成客户端配置
+3. web-flux reactive 响应式web 服务工具配置方式
+4. basic 基础功能配置
+5. mapper beanMapper 功能
+6. app 构建可运行应用
+7. resilience4j 熔断 限时操作
 
 spring 依赖配置管理
 

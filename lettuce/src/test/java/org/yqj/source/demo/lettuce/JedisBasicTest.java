@@ -13,7 +13,7 @@ import redis.clients.jedis.Jedis;
  * Email: yaoqijunmail@foxmail.com
  */
 @Slf4j
-@Ignore
+//@Ignore
 public class JedisBasicTest {
 
     @Test
@@ -28,4 +28,10 @@ public class JedisBasicTest {
         System.out.println(jedis.zrank("testSet", "0"));
     }
 
+    @Test
+    public void incDescTest() {
+        String counterKey = "counterKey";
+        Jedis jedis = new Jedis("192.168.148.205", 12345);
+        System.out.println(jedis.get(counterKey));
+    }
 }
