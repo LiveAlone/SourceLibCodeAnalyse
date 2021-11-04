@@ -11,9 +11,9 @@ rootProject.name = "source"
 
 //include("app")
 //include("init")
-//include("cmd")
+include("cmd")
 //include("basic")
-//include("lettuce")
+include("lettuce")
 //include("mapper")
 //include("resilience4j")
 //include("sentinel")
@@ -21,7 +21,7 @@ rootProject.name = "source"
 
 //include("empty")
 //include("spring")
-include("spring-web")
+//include("spring-web")
 //include("actuator")
 //include("datasource")
 //include("web-flux")
