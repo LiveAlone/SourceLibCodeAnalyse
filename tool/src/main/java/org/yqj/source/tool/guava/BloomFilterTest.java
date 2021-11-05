@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.guava;
+package org.yqj.source.tool.guava;
 
 /**
  * Description:

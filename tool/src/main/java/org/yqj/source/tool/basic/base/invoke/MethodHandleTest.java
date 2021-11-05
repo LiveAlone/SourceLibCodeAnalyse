@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.base.invoke;
+package org.yqj.source.tool.basic.base.invoke;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;

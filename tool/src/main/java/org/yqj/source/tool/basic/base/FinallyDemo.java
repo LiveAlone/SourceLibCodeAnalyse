@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.base;
+package org.yqj.source.tool.basic.base;
 
 /**
  * @author yaoqijun on 2017-11-10.

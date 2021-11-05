@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.concurrent;
+package org.yqj.source.tool.basic.concurrent;
 
 /**
  * @author yaoqijun on 2017-11-22.

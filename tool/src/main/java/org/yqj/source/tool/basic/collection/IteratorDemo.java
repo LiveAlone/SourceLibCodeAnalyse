@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.collections;
+package org.yqj.source.tool.basic.collection;
 
 
 import com.google.common.collect.Lists;

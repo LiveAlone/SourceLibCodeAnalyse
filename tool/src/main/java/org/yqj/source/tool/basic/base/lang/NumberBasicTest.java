@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.base.lang;
+package org.yqj.source.tool.basic.base.lang;
 
 public class NumberBasicTest {
     public static void main(String[] args) {

@@ -7,7 +7,9 @@ plugins {
 
 repositories {
     // Use Maven Central for resolving dependencies.
-    mavenCentral()
+    maven {
+        url = uri("https://maven.aliyun.com/nexus/content/groups/public")
+    }
 }
 
 dependencies {

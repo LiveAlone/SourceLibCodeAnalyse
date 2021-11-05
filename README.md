@@ -6,8 +6,8 @@
    * init (依赖guava 项目启动模板)
 1. cmd 命令行，demo 测试, 算法代码
 2. lettuce redis reactive 集成客户端配置
-3. web-flux reactive 响应式web 服务工具配置方式
-4. basic 基础功能配置
+3. basic 基础功能配置 (io net netty, jvm)
+4. tools 开源工具简单analyse (basic, guava etc)
 5. mapper beanMapper 功能
 6. app 构建可运行应用
 7. resilience4j 熔断 限时操作

@@ -1,4 +1,4 @@
-package org.yqj.source.demo.basic.concurrent.reentrant;
+package org.yqj.source.tool.basic.concurrent.reentrant;
 
 import java.util.concurrent.locks.ReentrantLock;
 
