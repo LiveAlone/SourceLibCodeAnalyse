@@ -18,7 +18,7 @@ public class CompletableFutureTest {
 
     public static void main(String[] args) throws Exception {
 
-//        futureSingle();
+        futureSingle();
 
 //         1. CompletableFuture price set
 //        completableFutureSet();
