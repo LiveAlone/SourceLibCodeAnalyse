@@ -18,10 +18,10 @@ public class CompletableFutureTest {
 
     public static void main(String[] args) throws Exception {
 
-        futureSingle();
+//        futureSingle();
 
 //         1. CompletableFuture price set
-//        completableFutureSet();
+        completableFutureSet();
 
 //        testCompleteOutput();
 
@@ -33,7 +33,7 @@ public class CompletableFutureTest {
 
 //        testThen();
 
-        completableBothValueTest();
+//        completableBothValueTest();
     }
 
     public static void completableBothValueTest(){
