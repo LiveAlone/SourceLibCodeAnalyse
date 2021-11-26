@@ -20,3 +20,4 @@ spring 依赖配置管理
 2. actuator prometheus 监控
 3. graphQL basic spring 相关使用方式
 4. web-flux web Reactive 响应式编程
+5. sw sky walking trace 路径打点动态配置config
