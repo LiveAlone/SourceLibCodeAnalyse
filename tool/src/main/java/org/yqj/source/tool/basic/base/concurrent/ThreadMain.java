@@ -16,27 +16,40 @@ public class ThreadMain {
     }
 
     public static final void tryToInterruptThread() throws InterruptedException {
-        // interrupt 执行中线程
+        // sleep interrupt
 //        Thread cur = new Thread(() -> {
 //            long val = 0L;
 //            try {
-//                while (true) {
-//                    val += 1;
-//                }
+//                Thread.sleep(20000);
 //            }catch (Exception e) {
 //                System.out.println("gain error message is " + e.getMessage());
 //                System.out.println("exception value is :" + val);
 //            }
 //        });
 
-        Thread cur = new Thread(()->{
-            System.out.println("current thread is to starting");
-            LockSupport.park();
-            System.out.println("current thread is alive");
+        // interrupt 执行中线程
+        Thread cur = new Thread(() -> {
+            long val = 0L;
+            try {
+                while (true) {
+                    val += 1;
+                }
+            }catch (Exception e) {
+                System.out.println("gain error message is " + e.getMessage());
+                System.out.println("exception value is :" + val);
+            }
         });
+
+        // 挂起线程不会interrupt 异常状态
+//        Thread cur = new Thread(()->{
+//            System.out.println("current thread is to starting");
+//            LockSupport.park();
+//            System.out.println("current thread is alive");
+//        });
+
         cur.start();
-        Thread.sleep(10000);
         cur.interrupt();
+        Thread.sleep(10000);
         System.out.println("interrupt finish all");
     }
 
