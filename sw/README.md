@@ -13,3 +13,5 @@
 - '-Dskywalking.agent.service_name=$(APPID)'
 - '-Dskywalking.collector.backend_service=10.4.44.91:11800'
 ```
+
+监控插件

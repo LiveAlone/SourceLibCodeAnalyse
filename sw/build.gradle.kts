@@ -18,4 +18,7 @@ publishing {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("redis.clients:jedis")
+    implementation("org.apache.skywalking:apm-toolkit-trace:8.8.0")
+    implementation("org.apache.skywalking:apm-toolkit-meter:8.8.0")
 }
