@@ -2,6 +2,7 @@ package org.yqj.source.demo.spring;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * Description:
@@ -11,6 +12,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * Email: yaoqijunmail@foxmail.com
  */
 @SpringBootApplication
+@EnableCaching
 public class BootDemoApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder()

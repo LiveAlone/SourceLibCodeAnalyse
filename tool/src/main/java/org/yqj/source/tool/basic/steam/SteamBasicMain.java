@@ -2,10 +2,6 @@ package org.yqj.source.tool.basic.steam;
 
 import com.google.common.collect.Lists;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 /**
  * Description: basic steam
  *
@@ -16,11 +12,22 @@ import java.util.stream.Stream;
 public class SteamBasicMain {
 
     public static void main(String[] args) {
-        System.out.println("steam main test config");
+        basicTest();
+    }
 
-        List<String> result = Lists.newArrayList(1, 2, 3, 4).stream()
-                .map(s -> s * 10)
-                .flatMap(p -> Stream.of(p, p / 2, p / 4, p / 8))
-                .map(String::valueOf).collect(Collectors.toList());
+    public static void basicTest() {
+        Lists.newArrayList(1, 2, 3, 4)
+                .stream()
+                .map(v -> {
+                    System.out.println("convert to string is" + v);
+                    return String.valueOf(v);
+                })
+                .forEach(System.out::println);
+
+//        List<String> result = Lists.newArrayList(1, 2, 3, 4).stream()
+//                .map(s -> s * 10)
+//                .flatMap(p -> Stream.of(p, p / 2, p / 4, p / 8))
+//                .map(String::valueOf).collect(Collectors.toList());
+//        System.out.println(result);
     }
 }

@@ -3,6 +3,7 @@ package org.yqj.source.demo.spring;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.yqj.source.demo.spring.cache.PersonService;
 import org.yqj.source.demo.spring.core.event.FruitEventPublisherService;
 
 import javax.annotation.Resource;
@@ -19,11 +20,10 @@ import javax.annotation.Resource;
 public class RunCommandLine implements CommandLineRunner {
 
     @Resource
-    private FruitEventPublisherService fruitEventPublisherService;
+    private PersonService personService;
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("starting command line ...");
-        fruitEventPublisherService.publishEvent();
+        log.info("starting command line {}", personService.gainCachePerson(123));
     }
 }
