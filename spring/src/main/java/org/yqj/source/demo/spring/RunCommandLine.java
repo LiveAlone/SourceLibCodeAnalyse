@@ -2,6 +2,8 @@ package org.yqj.source.demo.spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Component;
 import org.yqj.source.demo.spring.cache.PersonService;
 import org.yqj.source.demo.spring.core.event.FruitEventPublisherService;
@@ -22,8 +24,16 @@ public class RunCommandLine implements CommandLineRunner {
     @Resource
     private PersonService personService;
 
+    @Resource
+    private CacheManager cacheManager;
+
     @Override
     public void run(String... args) throws Exception {
         log.info("starting command line {}", personService.gainCachePerson(123));
+
+        log.info("cache names is :{}", cacheManager.getCacheNames());
+
+        Cache cache = cacheManager.getCache("itemCache");
+        log.info("cache item is :{}", cache.get(123));
     }
 }
