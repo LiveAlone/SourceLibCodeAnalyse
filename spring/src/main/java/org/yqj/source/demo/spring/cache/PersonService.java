@@ -14,8 +14,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class PersonService {
+
     @Cacheable(value = "itemCache")
     public CachePerson gainCachePerson(long id) {
+        log.info("******** gain cache person without cache");
         return new CachePerson(id, "test", 10);
     }
 }
