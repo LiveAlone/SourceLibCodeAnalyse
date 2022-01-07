@@ -6,11 +6,14 @@ plugins {
 }
 
 dependencies {
+    // javax cache
 //    implementation("javax.cache:cache-api:1.1.1")
-    implementation("org.springframework.boot:spring-boot-starter-cache")
-    implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("com.fasterxml.jackson.core:jackson-core")
-    implementation("com.fasterxml.jackson.core:jackson-databind")
+
+    // spring cache support
+//    implementation("org.springframework.boot:spring-boot-starter-cache")
+//    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+//    implementation("com.fasterxml.jackson.core:jackson-core")
+//    implementation("com.fasterxml.jackson.core:jackson-databind")
 }
 
 publishing {
