@@ -22,31 +22,7 @@ import javax.annotation.Resource;
 @Component
 @Slf4j
 public class RunCommandLine implements CommandLineRunner {
-
-    @Resource
-    private PersonService personService;
-
-    @Resource
-    private CacheManager cacheManager;
-
-    @Resource
-    private ApplicationContext applicationContext;
-
     @Override
     public void run(String... args) throws Exception {
-
-        for (int i = 0; i < 10; i++) {
-            CachePerson cachePerson = personService.gainCachePerson(456);
-            log.info("starting command line {}", cachePerson);
-        }
-
-        log.info("cache names is :{}", cacheManager.getCacheNames());
-
-        for (String s : applicationContext.getBeanNamesForType(CacheManager.class)) {
-            log.info("gain cache manage bean name is :{}", s);
-        }
-
-        Cache cache = cacheManager.getCache("itemCache");
-        log.info("cache item is :{}", cache.get(Long.valueOf(123)));
     }
 }

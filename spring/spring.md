@@ -21,3 +21,13 @@
 ```
 
 Spring 支持 ConcurrentHashMap, Jedis, MemCache 等等不同缓存资源， 通过RedisCacheExample
+
+
+Spring Framework
+
+  - spring 容器加载基础流程, web 模块，分析不同容器的继承实现方式
+
+```gradle
+    implementation("org.springframework.boot:spring-boot-starter-web")
+```
+

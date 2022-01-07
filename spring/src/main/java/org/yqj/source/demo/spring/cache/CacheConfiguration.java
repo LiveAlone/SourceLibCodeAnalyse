@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/1/4
  * Email: yaoqijunmail@foxmail.com
  */
-@Configuration
+//@Configuration
 public class CacheConfiguration {
 
 //    @Bean
