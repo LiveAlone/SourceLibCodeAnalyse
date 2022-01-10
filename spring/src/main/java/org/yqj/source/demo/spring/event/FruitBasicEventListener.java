@@ -1,4 +1,4 @@
-package org.yqj.source.demo.spring.core.event;
+package org.yqj.source.demo.spring.event;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;

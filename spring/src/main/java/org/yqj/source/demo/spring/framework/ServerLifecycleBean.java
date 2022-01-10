@@ -1,4 +1,4 @@
-package org.yqj.source.demo.spring.core;
+package org.yqj.source.demo.spring.framework;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.SmartLifecycle;

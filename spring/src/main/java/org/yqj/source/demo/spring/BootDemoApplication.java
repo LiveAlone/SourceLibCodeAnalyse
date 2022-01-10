@@ -16,6 +16,7 @@ import org.springframework.cache.annotation.EnableCaching;
 public class BootDemoApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder()
+                .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
                 .run(args);
     }
