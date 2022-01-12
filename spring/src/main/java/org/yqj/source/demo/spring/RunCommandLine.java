@@ -14,7 +14,17 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class RunCommandLine implements CommandLineRunner {
+
+    //    @Resource
+//    private ComponentA componentA;
+//
+//    @Resource
+//    private ComponentB componentB;
+
     @Override
     public void run(String... args) throws Exception {
+
+//        log.info("component a is :{}  component b is :{}", componentA.name(), componentB.name());
+
     }
 }

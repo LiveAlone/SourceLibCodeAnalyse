@@ -21,12 +21,6 @@ public class EnvCommandLine implements CommandLineRunner, EnvironmentAware {
 
     private Environment environment;
 
-//    @Resource
-//    private ComponentA componentA;
-//
-//    @Resource
-//    private ComponentB componentB;
-
     @Override
     public void run(String... args) throws Exception {
 
@@ -38,9 +32,9 @@ public class EnvCommandLine implements CommandLineRunner, EnvironmentAware {
 //            });
 //        }
 
-//        log.info("gain value is :{}", environment.getProperty("server.port", Integer.class));
-
-//        log.info("component a is :{}  component b is :{}", componentA.name(), componentB.name());
+//        String test = environment.getProperty("config.value_first");
+        String test = environment.getProperty("app.alias");
+        log.info("gain value is :{}", test);
     }
 
     @Override

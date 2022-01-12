@@ -15,9 +15,10 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 public class BootDemoApplication {
     public static void main(String[] args) {
+        String[] params = new String[]{"commandLineValue", "command_line_value"};
         new SpringApplicationBuilder()
                 .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
-                .run(args);
+                .run(params);
     }
 }
