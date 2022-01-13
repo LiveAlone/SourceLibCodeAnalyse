@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/1/11
  * Email: yaoqijunmail@foxmail.com
  */
-@Configuration
+//@Configuration
 public class ConfigurationBean {
 
     @Value("${config.value_first:value_first}")
