@@ -7,6 +7,8 @@ import org.yqj.source.demo.spring.event.FruitBasicEventListener;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Description:
@@ -24,7 +26,9 @@ public class ResolvableTypeTest {
 //        System.out.println(resolveDeclaredEventType(ls.getClass(), ArrayList.class));
 //        System.out.println(resolveDeclaredEventType(LocalIntegerList.class, ArrayList.class));
 
-        localReflectAnalyse(FruitBasicEventListener.class);
+//        localReflectAnalyse(FruitBasicEventListener.class);
+//        localReflectAnalyse(ArrayList.class);
+        localReflectAnalyse(LocalIntegerList.class);
     }
 
     static ResolvableType resolveDeclaredEventType(Class<?> listenerType, Class<?> asClass) {
@@ -48,7 +52,8 @@ public class ResolvableTypeTest {
 //        }
     }
 
-    public static class LocalIntegerList extends ArrayList<Integer> {
+    public static class LocalIntegerList implements LocalList<Integer> {
     }
 
+    public static interface LocalList<E>{}
 }
