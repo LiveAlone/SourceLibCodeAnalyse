@@ -2,13 +2,9 @@ package org.yqj.source.demo.spring.utils;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.ResolvableType;
-import org.yqj.source.demo.spring.event.FruitBasicEventListener;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 /**
  * Description:
@@ -55,5 +51,6 @@ public class ResolvableTypeTest {
     public static class LocalIntegerList implements LocalList<Integer> {
     }
 
-    public static interface LocalList<E>{}
+    public static interface LocalList<E> {
+    }
 }
