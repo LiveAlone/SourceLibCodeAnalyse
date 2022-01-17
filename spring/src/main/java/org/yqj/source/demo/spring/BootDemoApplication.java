@@ -21,7 +21,7 @@ public class BootDemoApplication {
         new SpringApplicationBuilder()
                 .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
-                .applicationStartup(new FlightRecorderApplicationStartup())
+//                .applicationStartup(new FlightRecorderApplicationStartup())
                 .run(params);
     }
 }
