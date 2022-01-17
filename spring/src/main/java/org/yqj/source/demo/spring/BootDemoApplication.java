@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.core.metrics.jfr.FlightRecorderApplicationStartup;
 
 /**
  * Description:
@@ -20,7 +21,7 @@ public class BootDemoApplication {
         new SpringApplicationBuilder()
                 .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
-                .applicationStartup(new BufferingApplicationStartup(Integer.MAX_VALUE))
+                .applicationStartup(new FlightRecorderApplicationStartup())
                 .run(params);
     }
 }
