@@ -24,7 +24,6 @@ public class ComponentB {
     private final ComponentA componentA;
     public ComponentB(ComponentA componentA) {
         this.componentA = componentA;
-        log.info("***************** B construct reference self :{}", componentA.getComponentB());
     }
 
     public String name() {

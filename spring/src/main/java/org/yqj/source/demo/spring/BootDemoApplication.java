@@ -2,6 +2,7 @@ package org.yqj.source.demo.spring;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
@@ -19,6 +20,7 @@ public class BootDemoApplication {
         new SpringApplicationBuilder()
                 .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
+                .applicationStartup(new BufferingApplicationStartup(Integer.MAX_VALUE))
                 .run(params);
     }
 }
