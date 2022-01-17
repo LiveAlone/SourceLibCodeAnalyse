@@ -6,6 +6,10 @@ plugins {
     id("org.yqj.source.java-common-conventions")
 }
 
+dependencies {
+    compileOnly("javax.cache:cache-api:1.1.1")
+}
+
 publishing {
     publications {
         getByName<MavenPublication>("maven") {
