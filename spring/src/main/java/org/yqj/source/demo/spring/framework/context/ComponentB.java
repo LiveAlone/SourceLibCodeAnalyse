@@ -18,13 +18,17 @@ import javax.annotation.Resource;
 @Slf4j
 public class ComponentB {
 
-//    @Resource
-//    private ComponentA componentA;
+    @Resource
+    private ComponentA componentA;
 
-    private final ComponentA componentA;
-    public ComponentB(ComponentA componentA) {
-        this.componentA = componentA;
+    static {
+        log.info("component b class is loading");
     }
+
+//    private final ComponentA componentA;
+//    public ComponentB(ComponentA componentA) {
+//        this.componentA = componentA;
+//    }
 
     public String name() {
         log.info("container a info is :{}", componentA);

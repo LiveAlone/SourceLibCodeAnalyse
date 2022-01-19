@@ -7,7 +7,7 @@ plugins {
 }
 
 dependencies {
-    compileOnly("javax.cache:cache-api:1.1.1")
+//    compileOnly("javax.cache:cache-api:1.1.1")
 }
 
 publishing {

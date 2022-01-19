@@ -23,6 +23,10 @@ public class ComponentA {
     @Getter
     private ComponentB componentB;
 
+    static {
+        log.info("component a class is loading");
+    }
+
 //    private final ComponentB componentB;
 //    public ComponentA(ComponentB componentB) {
 //        this.componentB = componentB;
