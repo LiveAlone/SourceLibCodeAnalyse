@@ -1,11 +1,7 @@
 package org.yqj.source.demo.lettuce;
 
-import com.google.common.io.ByteStreams;
-import com.google.common.primitives.Bytes;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Ignore;
 import org.junit.Test;
-import redis.clients.jedis.BitPosParams;
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
@@ -41,6 +37,19 @@ public class JedisBasicTest {
 //        System.out.println(pos1 & first);
 //        System.out.println(pos3 & first);
         System.out.println(ByteUtil.listPost(jedis.get(key.getBytes())));
+    }
+
+    @Test
+    public void SetTest() {
+        Jedis jedis = new Jedis("localhost", 6379);
+
+        String result = jedis.set("testSetSpecial", "1", "NX", "EX", 300);
+        System.out.println(result);
+        System.out.println(result == null);
+
+//        String result = jedis.setex("testSetSpecial", 150, "123");
+//        String result = jedis.set("testSetSpecial", "66666666666");
+//        System.out.println(result);
     }
 
     @Test

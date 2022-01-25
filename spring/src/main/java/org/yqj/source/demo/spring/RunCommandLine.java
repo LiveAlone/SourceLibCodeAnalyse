@@ -1,6 +1,7 @@
 package org.yqj.source.demo.spring;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.security.SecurityDataConfiguration;
 import org.springframework.stereotype.Component;
@@ -20,12 +21,5 @@ public class RunCommandLine implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-    }
-
-    public static void main(String[] args) {
-        Class clazza = SecurityDataConfiguration.class;
-        for (Annotation annotation : clazza.getAnnotations()) {
-            System.out.println(annotation);
-        }
     }
 }

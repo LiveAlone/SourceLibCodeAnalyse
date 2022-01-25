@@ -17,6 +17,7 @@ publishing {
 }
 
 dependencies {
-    implementation("io.lettuce:lettuce-core:5.3.0.RELEASE")
-    implementation("redis.clients:jedis:3.6.3")
+//    implementation("io.lettuce:lettuce-core:5.3.0.RELEASE")
+//    implementation("redis.clients:jedis:3.6.3")
+    implementation("redis.clients:jedis:2.9.0")
 }

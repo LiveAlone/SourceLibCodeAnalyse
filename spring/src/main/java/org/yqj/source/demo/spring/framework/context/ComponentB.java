@@ -22,7 +22,7 @@ public class ComponentB {
     private ComponentA componentA;
 
     static {
-        log.info("component b class is loading");
+//        log.info("************** component b class is loading");
     }
 
 //    private final ComponentA componentA;

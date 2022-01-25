@@ -34,12 +34,12 @@ public class DemoBeanAware implements BeanNameAware, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     static {
-        log.info("demo bean aware class is loading ...");
+        log.info("**************** demo bean aware class is loading ...");
     }
 
     @PostConstruct
     public void init() {
-        log.info("************ post construct method");
+//        log.info("************ post construct method");
     }
 
     public String name() {
