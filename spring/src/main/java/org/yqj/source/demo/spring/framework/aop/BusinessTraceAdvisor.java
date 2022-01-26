@@ -7,6 +7,7 @@ import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.Pointcut;
 import org.springframework.aop.support.AbstractPointcutAdvisor;
 import org.springframework.aop.support.StaticMethodMatcherPointcut;
+import org.springframework.stereotype.Component;
 import org.yqj.source.demo.spring.framework.aop.service.AopUserService;
 
 import javax.annotation.Nonnull;
@@ -20,7 +21,7 @@ import java.lang.reflect.Method;
  * @date 2022/1/26
  * Email: yaoqijunmail@foxmail.com
  */
-//@Component
+@Component
 @Slf4j
 public class BusinessTraceAdvisor extends AbstractPointcutAdvisor {
     @Override

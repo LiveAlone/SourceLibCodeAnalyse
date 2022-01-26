@@ -14,8 +14,8 @@ import org.yqj.source.demo.spring.framework.aop.service.PeopleEnabled;
  * @date 2022/1/26
  * Email: yaoqijunmail@foxmail.com
  */
-@Aspect
-@Component
+//@Aspect
+//@Component
 @Slf4j
 public class BusinessTraceAspect {
 
