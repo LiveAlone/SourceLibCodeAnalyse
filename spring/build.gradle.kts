@@ -17,6 +17,9 @@ dependencies {
 
     // web demo
 //    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // start aop
+    implementation("org.springframework.boot:spring-boot-starter-aop")
 }
 
 publishing {

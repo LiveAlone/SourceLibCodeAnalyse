@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.metrics.jfr.FlightRecorderApplicationStartup;
 
 /**
@@ -14,7 +15,8 @@ import org.springframework.core.metrics.jfr.FlightRecorderApplicationStartup;
  * Email: yaoqijunmail@foxmail.com
  */
 @SpringBootApplication
-@EnableCaching
+//@EnableCaching
+//@EnableAspectJAutoProxy
 public class BootDemoApplication {
     public static void main(String[] args) {
         String[] params = new String[]{"commandLineValue", "command_line_value"};
