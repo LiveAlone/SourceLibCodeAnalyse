@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/1/12
  * Email: yaoqijunmail@foxmail.com
  */
-@Configuration
+//@Configuration
 public class ContextConfiguration {
 
     @Bean(name = {"a", "b", "c", "d"})

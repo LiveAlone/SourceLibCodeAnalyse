@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  * @date 2022/1/10
  * Email: yaoqijunmail@foxmail.com
  */
-@Component
+//@Component
 @Slf4j
 public class ComponentA {
 
