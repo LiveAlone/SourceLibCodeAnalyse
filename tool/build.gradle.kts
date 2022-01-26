@@ -12,3 +12,7 @@ publishing {
         }
     }
 }
+
+dependencies {
+    implementation("cglib:cglib:3.2.4")
+}
