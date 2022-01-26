@@ -2,6 +2,7 @@ package org.yqj.source.demo.spring.framework.aop.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -15,6 +16,14 @@ import java.util.concurrent.ThreadLocalRandom;
 @Component
 @Slf4j
 public class AopUserService {
+
+    public boolean validateUser(AopUser user) {
+        log.info("validate user info user:{}", user);
+        if (StringUtils.hasLength(user.getName())) {
+            return true;
+        }
+        throw new IllegalArgumentException("nameNull");
+    }
 
     public String saveUser(AopUser user) throws InterruptedException {
         int cost = ThreadLocalRandom.current().nextInt(1000);

@@ -3,10 +3,10 @@ package org.yqj.source.demo.spring;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.yqj.source.demo.spring.framework.aop.service.AopStudent;
 import org.yqj.source.demo.spring.framework.aop.service.AopStudentService;
 import org.yqj.source.demo.spring.framework.aop.service.AopUser;
 import org.yqj.source.demo.spring.framework.aop.service.AopUserService;
+import org.yqj.source.demo.spring.framework.aop.service.PeopleEnabled;
 
 import javax.annotation.Resource;
 
@@ -29,10 +29,19 @@ public class RunCommandLine implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        aopUserService.saveUser(new AopUser("yao", 18, 1000));
+//        aopUserService.saveUser(new AopUser("yao", 18, 1000));
 //        aopUserService.queryUser("yao", 19, 1000);
 
 //        aopStudentService.saveStudent(new AopStudent("qi", 28, 666));
 //        aopStudentService.queryStudent("qi", 28, 667);
+
+//        aopUserService.validateUser(new AopUser("yqj", 12, 100));
+//        aopUserService.validateUser(new AopUser(null, 12, 100));
+
+//        System.out.println(aopUserService.getClass().getName());
+//        aopUserService.saveUser(new AopUser("yao", 18, 1000));
+//        if (aopUserService instanceof PeopleEnabled) {
+//            ((PeopleEnabled) aopUserService).enabled();
+//        }
     }
 }
