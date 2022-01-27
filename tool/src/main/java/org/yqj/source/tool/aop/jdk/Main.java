@@ -21,20 +21,22 @@ import java.lang.reflect.Proxy;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        createInstanceWithInstance();
+//        createInstanceWithInstance();
 
-//        createInstanceWithClass();
+        createInstanceWithClass();
     }
 
-    public static void createInstanceWithClass() throws Exception{
-//        FooImpl impl = new FooImpl();
-//        Class proxyClass = Proxy.getProxyClass(impl.getClass().getClassLoader(), impl.getClass().getInterfaces());
-//        System.out.println(proxyClass.getName());
+    public static void createInstanceWithClass() throws Exception {
+        Person sourceTarget = new Person();
+        Class proxyClass = Proxy.getProxyClass(sourceTarget.getClass().getClassLoader(), sourceTarget.getClass().getInterfaces());
+        System.out.println(proxyClass.getName());
+        System.out.println(Coder.class.isAssignableFrom(proxyClass));
+        System.out.println(Worker.class.isAssignableFrom(proxyClass));
+        System.out.println(Runner.class.isAssignableFrom(proxyClass));
     }
 
     public static void createInstanceWithInstance() {
         Person sourceTarget = new Person();
-
 
         Object proxyInstance = Proxy.newProxyInstance(sourceTarget.getClass().getClassLoader(), new Class[]{Coder.class, Runner.class, Worker.class}, new InvocationHandler() {
             @Override
