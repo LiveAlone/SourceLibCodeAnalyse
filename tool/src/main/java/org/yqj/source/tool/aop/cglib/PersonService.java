@@ -1,4 +1,4 @@
-package org.yqj.source.tool.aop;
+package org.yqj.source.tool.aop.cglib;
 
 /**
  * Description:
