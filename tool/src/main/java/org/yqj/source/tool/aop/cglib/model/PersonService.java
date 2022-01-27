@@ -1,4 +1,4 @@
-package org.yqj.source.tool.aop.cglib;
+package org.yqj.source.tool.aop.cglib.model;
 
 /**
  * Description:

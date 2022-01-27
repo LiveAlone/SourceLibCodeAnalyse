@@ -1,10 +1,10 @@
 package org.yqj.source.tool.aop.jdk;
 
 import lombok.extern.slf4j.Slf4j;
-import org.yqj.source.tool.aop.model.Coder;
-import org.yqj.source.tool.aop.model.Person;
-import org.yqj.source.tool.aop.model.Runner;
-import org.yqj.source.tool.aop.model.Worker;
+import org.yqj.source.tool.aop.jdk.model.Coder;
+import org.yqj.source.tool.aop.jdk.model.Person;
+import org.yqj.source.tool.aop.jdk.model.Runner;
+import org.yqj.source.tool.aop.jdk.model.Worker;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

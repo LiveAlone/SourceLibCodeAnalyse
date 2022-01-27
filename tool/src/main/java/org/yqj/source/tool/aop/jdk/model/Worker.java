@@ -1,4 +1,4 @@
-package org.yqj.source.tool.aop.model;
+package org.yqj.source.tool.aop.jdk.model;
 
 /**
  * Description:
@@ -7,7 +7,6 @@ package org.yqj.source.tool.aop.model;
  * @date 2022/1/27
  * Email: yaoqijunmail@foxmail.com
  */
-public interface Coder {
-
-    void code(String name);
+public interface Worker {
+    void work(String name);
 }

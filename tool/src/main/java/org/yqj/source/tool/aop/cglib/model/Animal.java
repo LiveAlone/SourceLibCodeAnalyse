@@ -1,4 +1,4 @@
-package org.yqj.source.tool.aop.model;
+package org.yqj.source.tool.aop.cglib.model;
 
 /**
  * Description:
@@ -7,7 +7,11 @@ package org.yqj.source.tool.aop.model;
  * @date 2022/1/27
  * Email: yaoqijunmail@foxmail.com
  */
-public interface Runner {
+public interface Animal {
+
+    void eat(String name);
+
+    void drink(String name);
 
     void run(String name);
 }
