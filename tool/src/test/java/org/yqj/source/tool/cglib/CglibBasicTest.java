@@ -15,6 +15,11 @@ import org.yqj.source.tool.aop.cglib.CglibBasic;
 public class CglibBasicTest {
 
     @Test
+    public void proxyAbstractClassTest() {
+        CglibBasic.proxyAbstractClass();
+    }
+
+    @Test
     public void superMethodExecuteTest() {
         CglibBasic.superMethodExecute();
     }

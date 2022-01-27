@@ -5,6 +5,7 @@ import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.FixedValue;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+import org.yqj.source.tool.aop.cglib.model.AbstractAnimal;
 import org.yqj.source.tool.aop.cglib.model.Animal;
 import org.yqj.source.tool.aop.cglib.model.Cat;
 import org.yqj.source.tool.aop.cglib.model.CommonAnimal;
@@ -21,6 +22,23 @@ import java.lang.reflect.Method;
  */
 @Slf4j
 public class CglibBasic {
+
+    public static void proxyAbstractClass() {
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(AbstractAnimal.class);
+        enhancer.setCallback(new MethodInterceptor() {
+            @Override
+            public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
+                log.info("method intercept before start :{}", method.getName());
+                return proxy.invokeSuper(obj, args);
+            }
+        });
+
+        Object proxy = enhancer.create();
+        Animal animal = (Animal) proxy;
+        animal.eat("jamama");
+//        animal.run("huhaha"); // error
+    }
 
     public static void superMethodExecute() {
         Enhancer enhancer = new Enhancer();
