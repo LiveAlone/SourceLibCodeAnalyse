@@ -1,4 +1,4 @@
-package org.yqj.source.init;
+package org.yqj.source.tool;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
