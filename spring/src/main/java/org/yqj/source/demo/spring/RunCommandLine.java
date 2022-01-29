@@ -3,10 +3,6 @@ package org.yqj.source.demo.spring;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.yqj.source.demo.spring.framework.aop.service.AopStudentService;
-import org.yqj.source.demo.spring.framework.aop.service.AopUser;
-import org.yqj.source.demo.spring.framework.aop.service.AopUserService;
-import org.yqj.source.demo.spring.framework.aop.service.PeopleEnabled;
 
 import javax.annotation.Resource;
 
