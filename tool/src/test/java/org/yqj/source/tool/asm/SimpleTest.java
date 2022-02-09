@@ -16,6 +16,5 @@ public class SimpleTest {
 
     @Test
     public void sumTest() {
-        log.info("sum result is :{}", Simple.sum());
     }
 }

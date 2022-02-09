@@ -9,11 +9,14 @@ package org.yqj.source.tool.aop.asm;
  */
 public class Simple {
 
-    public static int sum() {
-        int sum = 0;
-        for (int i = 0; i < 10; i++) {
-            sum += i;
-        }
-        return sum;
+    private int m;
+
+    public Simple() {
+        m = 100;
     }
+
+    public int inc() {
+        return m + 1234123145;
+    }
+
 }

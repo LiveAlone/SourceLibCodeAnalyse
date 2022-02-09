@@ -17,6 +17,12 @@ public class TestClass {
 
     public TestClass(String name) throws Exception {}
 
+    public void onlyMe(String test) {
+        synchronized (test) {
+            System.out.println("current only me");
+        }
+    }
+
     public int inc() {
         try {
             Thread.sleep(1000);
