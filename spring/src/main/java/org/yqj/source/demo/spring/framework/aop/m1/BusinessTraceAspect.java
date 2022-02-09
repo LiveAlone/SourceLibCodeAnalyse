@@ -1,11 +1,6 @@
-package org.yqj.source.demo.spring.framework.aop;
+package org.yqj.source.demo.spring.framework.aop.m1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.DeclareParents;
-import org.springframework.stereotype.Component;
-import org.yqj.source.demo.spring.framework.aop.service.DefaultPeopleEnabled;
-import org.yqj.source.demo.spring.framework.aop.service.PeopleEnabled;
 
 /**
  * Description:

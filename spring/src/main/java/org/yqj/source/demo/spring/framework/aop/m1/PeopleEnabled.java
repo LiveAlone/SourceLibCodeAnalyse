@@ -1,4 +1,4 @@
-package org.yqj.source.demo.spring.framework.aop.service;
+package org.yqj.source.demo.spring.framework.aop.m1;
 
 /**
  * Description:
