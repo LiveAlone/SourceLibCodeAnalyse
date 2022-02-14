@@ -1,8 +1,5 @@
 package org.yqj.source.cmd.leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Description:
  *
@@ -13,6 +10,28 @@ import java.util.Set;
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println("test all");
+        Solution solution = new Solution();
+        System.out.println(solution.subarraySum(new int[]{1, 1, 1}, 2));
+        System.out.println(solution.subarraySum(new int[]{1, 2, 3}, 3));
+    }
+
+    public int subarraySum(int[] nums, int k) {
+        int sum = 0;
+        for (int pos = 0; pos < nums.length; pos++) {
+            if (pos != 0) {
+                nums[pos] += nums[pos -1];
+            }
+
+            if (nums[pos] == k) {
+                sum += 1;
+            }
+
+            for (int i = 0; i < pos; i++) {
+                if (nums[pos] - nums[i] == k) {
+                    sum += 1;
+                }
+            }
+        }
+        return sum;
     }
 }
