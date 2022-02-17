@@ -6,6 +6,17 @@ plugins {
     id("org.yqj.source.java-spring-conventions")
 }
 
+dependencies {
+
+    implementation("mysql:mysql-connector-java")
+    implementation("com.alibaba:druid:1.2.8")
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2")
+
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+
+    implementation("org.springframework.boot:spring-boot-starter-web")
+}
+
 publishing {
     publications {
         getByName<MavenPublication>("maven") {
