@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.TransactionSynchronizationAdapter;
+import org.springframework.transaction.support.TransactionSynchronization;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 import org.yqj.source.demo.transaction.config.DB1Config;
 import org.yqj.source.demo.transaction.db1.PersonDB1Mapper;
@@ -29,7 +29,7 @@ public class Db1Manager {
         log.info("****************** start db ");
         personDB1Mapper.updatePersonScore(1L, 7D);
         log.info("******************* end db");
-        TransactionSynchronizationAdapter transactionSynchronizationAdapter = new TransactionSynchronizationAdapter() {
+        TransactionSynchronization transactionSynchronizationAdapter = new TransactionSynchronization() {
             @Override
             public void beforeCommit(boolean readOnly) {
                 log.info("************* before transaction commit ******************");

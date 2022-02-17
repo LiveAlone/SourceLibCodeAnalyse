@@ -18,7 +18,7 @@ public class Db2Manager {
     private PersonDB2Mapper personDB2Mapper;
 
     @Transactional(DB1Config.DB1_TRANSACTION)
-    public void updateDiffDbCondition(){
+    public void updateDiffDbCondition() {
         personDB2Mapper.updatePersonScore(1L, 77D);
         throw new IllegalStateException("illegal state exception");
     }
