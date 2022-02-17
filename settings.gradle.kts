@@ -21,9 +21,10 @@ rootProject.name = "source"
 //include("graphQlBasic")
 
 //include("empty")
-include("spring")
+//include("spring")
 //include("spring-web")
 //include("actuator")
 //include("datasource")
 //include("web-flux")
 //include("sw")
+include("transaction")
