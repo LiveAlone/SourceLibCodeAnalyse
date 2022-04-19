@@ -11,6 +11,8 @@
 5. mapper beanMapper 功能
 6. app 构建可运行应用
 7. resilience4j 熔断 限时操作
+8. engine 规则引擎支持框架
+
 
 spring 依赖配置管理
 
