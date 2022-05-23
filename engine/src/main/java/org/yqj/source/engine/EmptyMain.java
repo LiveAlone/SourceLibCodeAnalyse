@@ -12,6 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmptyMain {
     public static void main(String[] args) {
-        log.info("this is init project");
+        log.info("this is engine project");
     }
 }
