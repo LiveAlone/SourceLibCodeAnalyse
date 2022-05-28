@@ -10,7 +10,7 @@
 rootProject.name = "source"
 
 //include("app")
-//include("init")
+include("init")
 //include("cmd")
 //include("tool")
 //include("basic")
@@ -19,7 +19,7 @@ rootProject.name = "source"
 //include("resilience4j")
 //include("sentinel")
 //include("graphQlBasic")
-include("engine")
+//include("engine")
 
 //include("empty")
 //include("spring")
