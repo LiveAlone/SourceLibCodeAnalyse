@@ -10,7 +10,7 @@
 rootProject.name = "source"
 
 //include("app")
-include("init")
+//include("init")
 //include("cmd")
 //include("tool")
 //include("basic")
@@ -21,7 +21,7 @@ include("init")
 //include("graphQlBasic")
 //include("engine")
 
-//include("empty")
+include("empty")
 //include("spring")
 //include("spring-web")
 //include("actuator")
