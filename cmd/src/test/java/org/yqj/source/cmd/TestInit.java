@@ -25,6 +25,6 @@ public class TestInit {
 
     @Test
     public void testNone() {
-        Assert.assertEquals(1L, 1L);
+        System.out.println(Thread.currentThread().getName());
     }
 }
