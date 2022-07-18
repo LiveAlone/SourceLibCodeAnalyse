@@ -39,7 +39,7 @@ public class DemoBeanAware implements BeanNameAware, ApplicationContextAware {
 
     @PostConstruct
     public void init() {
-//        log.info("************ post construct method");
+        log.info("************ post construct method");
     }
 
     public String name() {
