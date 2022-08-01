@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("org.yqj.source.java-common-conventions")
+    id("org.yqj.source.java-spring-web-conventions")
 }
 
 publishing {
@@ -17,5 +17,6 @@ publishing {
 }
 
 dependencies {
-    implementation("com.alibaba.csp:sentinel-core:1.8.2")
+    implementation("com.alibaba.csp:sentinel-core:1.8.4")
+    implementation("com.alibaba.csp:sentinel-transport-simple-http:1.8.4")
 }

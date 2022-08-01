@@ -1,6 +1,5 @@
 package org.yqj.source.demo.sentinel;
 
-import com.alibaba.csp.sentinel.AsyncEntry;
 import com.alibaba.csp.sentinel.Entry;
 import com.alibaba.csp.sentinel.SphO;
 import com.alibaba.csp.sentinel.SphU;
@@ -22,48 +21,23 @@ import java.util.List;
  */
 public class SentinelExample {
 
-    public static void main(String[] args) throws Exception{
-        initFlowRules();
-        helloWorld();
+    public static void main(String[] args) throws Exception {
+        init();
+
+        limitDemo();
     }
 
-    private static void helloWorld() throws Exception{
+    public static void limitDemo() throws Exception {
         while (true) {
-            Entry entry = null;
-            try {
-                entry = SphU.entry("HelloWorld");
+            try (Entry entry = SphU.entry("HelloWorld")) {
                 System.out.println("Hello world !!");
-                Thread.sleep(10);
             } catch (Exception e) {
-                System.out.println("block!");
-                Thread.sleep(1000);
-            } finally {
-                if (entry != null) {
-                    entry.exit();
-                }
             }
+            Thread.sleep(10);
         }
-
-//        while (true){
-//            try(Entry entry = SphU.entry("HelloWorld")) {
-//                System.out.println("Hello world !!");
-//            }catch (Exception e){
-//                System.out.println("block");
-//            }
-//        }
     }
 
-    private static void initFlowRules(){
-        List<FlowRule> rules = new ArrayList<>();
-        FlowRule rule = new FlowRule();
-        rule.setResource("HelloWorld");
-        rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        rule.setCount(5);
-        rules.add(rule);
-        FlowRuleManager.loadRules(rules);
-    }
-
-    public static void differentEntryConfig() throws BlockException{
+    public static void differentEntryConfig() throws BlockException {
         ContextUtil.enter("entrance1", "appA");
         Entry nodeA = SphU.entry("nodeA");
         if (nodeA != null) {
@@ -79,16 +53,6 @@ public class SentinelExample {
         ContextUtil.exit();
     }
 
-    public static void asyncEntryTest() {
-        AsyncEntry asyncEntry = null;
-
-        try {
-            asyncEntry = SphU.asyncEntry("HelloWorld");
-        } catch (BlockException e) {
-            System.out.println("block config !");
-        }
-    }
-
     public static void testSphOTest(){
         while (true){
             if (SphO.entry("HelloWorld")){
@@ -101,5 +65,17 @@ public class SentinelExample {
                 System.out.println("block");
             }
         }
+    }
+
+    public static void init() {
+        List<FlowRule> rules = new ArrayList<>();
+
+        FlowRule rule = new FlowRule();
+        rule.setResource("HelloWorld");
+        rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
+        rule.setCount(10);      // qps 数量限制
+
+        rules.add(rule);
+        FlowRuleManager.loadRules(rules);
     }
 }

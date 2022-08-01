@@ -6,5 +6,5 @@ package org.yqj.source.demo.sentinel;
  * Email:yaoqj@terminus.io
  * Descirbe:
  */
-public class TestContent {
+public class BasicTest {
 }
