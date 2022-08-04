@@ -31,7 +31,7 @@ public class SentinelConfiguration {
 
 //        degradeControllerInit();
 
-        authorityControllerInit();
+//        authorityControllerInit();
     }
 
     public void authorityControllerInit() {
