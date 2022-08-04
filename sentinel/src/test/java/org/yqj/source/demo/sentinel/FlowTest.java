@@ -20,7 +20,7 @@ import java.util.List;
  * Email:yaoqj@terminus.io
  * Descirbe:
  */
-public class BasicTest {
+public class FlowTest {
 
     @BeforeAll
     public static void init() {
