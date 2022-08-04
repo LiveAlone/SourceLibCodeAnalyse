@@ -1,4 +1,4 @@
-package org.yqj.source.demo.sentinel;
+package org.yqj.source.demo.sentinel.controller;
 
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
@@ -17,15 +17,19 @@ import java.util.List;
  * Email: yaoqijunmail@foxmail.com
  */
 @Configuration
-public class LocalConfiguration {
+public class SentinelConfiguration {
 
     @PostConstruct
     public void init() {
+        flowControllerInit();
+    }
+
+    private void flowControllerInit() {
         List<FlowRule> rules = new ArrayList<>();
 
         // single rule
         FlowRule rule = new FlowRule();
-        rule.setResource("HelloWorld");
+        rule.setResource("FlowController");
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         rule.setCount(1);
 

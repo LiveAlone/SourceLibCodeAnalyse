@@ -18,9 +18,16 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 @RestController
 @Slf4j
-public class HelloController {
-    @RequestMapping(value = "hello", method = RequestMethod.GET)
-    public String hello() {
-        return "world";
+public class SentinelController {
+
+    @RequestMapping(value = "flow", method = RequestMethod.GET)
+    public String flowController() {
+        try (Entry entry = SphU.entry("FlowController")) {
+            Thread.sleep(ThreadLocalRandom.current().nextInt(300));
+            return "success";
+        } catch (Exception e) {
+            log.error("flow controller fail cause:", e);
+            return e.toString();
+        }
     }
 }

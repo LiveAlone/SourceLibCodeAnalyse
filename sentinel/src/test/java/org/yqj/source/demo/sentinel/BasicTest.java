@@ -31,7 +31,13 @@ public class BasicTest {
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         rule.setCount(10);      // qps 数量限制
 
+        FlowRule rule2 = new FlowRule();
+        rule2.setResource("HelloWorld2");
+        rule2.setGrade(RuleConstant.FLOW_GRADE_QPS);
+        rule2.setCount(20);      // qps 数量限制
+
         rules.add(rule);
+        rules.add(rule2);
 
         FlowRuleManager.loadRules(rules);
     }
@@ -41,6 +47,11 @@ public class BasicTest {
         while (true) {
             try (Entry entry = SphU.entry("HelloWorld")) {
                 System.out.println("Hello world !!");
+            } catch (Exception e) {
+            }
+
+            try (Entry entry = SphU.entry("HelloWorld2")) {
+                System.out.println("New Hello world !!");
             } catch (Exception e) {
             }
             Thread.sleep(10);
