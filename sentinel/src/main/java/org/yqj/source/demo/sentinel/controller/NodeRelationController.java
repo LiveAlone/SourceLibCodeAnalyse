@@ -28,8 +28,6 @@ public class NodeRelationController {
         entryB.exit();
         entryA.exit();
         Entry entryC = SphU.entry("entryC");
-        Entry entryB2 = SphU.entry("entryB");
-        entryB2.exit();
         entryC.exit();
         return "success";
     }

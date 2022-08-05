@@ -24,5 +24,6 @@ public class BasicTest {
         Entry entryB = SphU.entry("entryB");
         entryB.exit();
         entryA.exit();
+        ContextUtil.exit();
     }
 }
