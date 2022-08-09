@@ -2,4 +2,4 @@ logging:
   level:
     root: INFO
 server:
-  port: 18080
+  port: 8080
