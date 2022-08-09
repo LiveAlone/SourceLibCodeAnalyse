@@ -1,17 +1,23 @@
 package org.yqj.source.demo.basic.jvm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by yaoqijun on 2017/6/28.
  */
 public class HeapOOM {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+        while (true) {
+            byte[] b = new byte[1024*1024];
+            Thread.sleep(1000);
+        }
 //        List<OOMObject> oomObjects = new ArrayList<>();
 //        while (true){
 //            oomObjects.add(new OOMObject());
 //        }
-        String str1 = "1234";
-        String str2 = "1234";
-        System.out.println(str1.intern() == str2.intern());
+//        System.out.println("test");
     }
 
     public static class OOMObject{}
