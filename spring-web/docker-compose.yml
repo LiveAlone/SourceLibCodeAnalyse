@@ -1,0 +1,9 @@
+# 启动构建镜像服务内容
+version: "3"
+
+services:
+  app:
+    image: "yaoqijun/spring-web:1.0.0"
+    ports:
+      - "8080:8080"
+    working_dir: /tmp
