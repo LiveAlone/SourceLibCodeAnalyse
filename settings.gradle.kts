@@ -12,7 +12,7 @@ rootProject.name = "source"
 //include("app")
 //include("init")
 //include("cmd")
-//include("tool")
+include("tool")
 //include("net")
 //include("lettuce")
 //include("mapper")
@@ -23,7 +23,7 @@ rootProject.name = "source"
 
 //include("empty")
 //include("spring")
-include("spring-web")
+//include("spring-web")
 //include("actuator")
 //include("datasource")
 //include("web-flux")
