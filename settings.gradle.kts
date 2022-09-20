@@ -14,7 +14,7 @@ rootProject.name = "source"
 //include("cmd")
 //include("tool")
 //include("net")
-//include("lettuce")
+include("lettuce")
 //include("mapper")
 //include("resilience4j")
 //include("sentinel")
