@@ -36,7 +36,7 @@ public class JedisBasicTest {
 //        System.out.println(pos3);
 //        System.out.println(pos1 & first);
 //        System.out.println(pos3 & first);
-        System.out.println(ByteUtil.listPost(jedis.get(key.getBytes())));
+//        System.out.println(ByteUtil.listPost(jedis.get(key.getBytes())));
     }
 
     @Test
