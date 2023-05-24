@@ -1,9 +1,6 @@
-package org.yqj.source.tool;
+package org.yqj.source.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Hashtable;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Description:
@@ -15,5 +12,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 public class EmptyMain {
     public static void main(String[] args) {
+        log.info("this is init project");
     }
 }
