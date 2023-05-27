@@ -16,7 +16,7 @@ public class TestLeetCode {
     @Test
     public void testSolution(){
         Solution s = new Solution();
-        log.info("test 1 {}", s.reverse(-2147483648));
+        log.info("test 1 {}", s.letterCombinations("2"));
 
     }
 }
