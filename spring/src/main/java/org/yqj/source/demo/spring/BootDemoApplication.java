@@ -15,7 +15,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 //@EnableAspectJAutoProxy
 public class BootDemoApplication {
     public static void main(String[] args) {
-        String[] params = new String[]{"commandLineValue", "command_line_value"};
+//        String[] params = new String[]{"commandLineValue", "command_line_value"};
+        String[] params = new String[]{};
         new SpringApplicationBuilder()
 //                .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
