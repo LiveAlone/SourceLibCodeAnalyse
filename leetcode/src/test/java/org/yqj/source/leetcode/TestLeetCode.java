@@ -16,6 +16,5 @@ public class TestLeetCode {
     @Test
     public void testSolution() {
         Solution s = new Solution();
-        log.info("test {}", s.minPathSum(new int[][]{{1,3,1},{1,5,1},{4,2,1}}));
     }
 }
