@@ -14,6 +14,6 @@ repositories {
 
 dependencies {
     // spring plugin version
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.7.2")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:3.1.0")
 
 }
