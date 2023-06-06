@@ -14,9 +14,8 @@ import org.junit.Test;
 public class TestLeetCode {
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         Solution s = new Solution();
-        log.info("test 1 {}", s.letterCombinations("2"));
-
+        log.info("test {}", s.minPathSum(new int[][]{{1,3,1},{1,5,1},{4,2,1}}));
     }
 }
