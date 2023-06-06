@@ -16,5 +16,6 @@ public class TestLeetCode {
     @Test
     public void testSolution() {
         Solution s = new Solution();
+        log.info("max :{}", s.max("abcabcbb"));
     }
 }
