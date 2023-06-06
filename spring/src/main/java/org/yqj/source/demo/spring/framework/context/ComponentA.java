@@ -1,10 +1,10 @@
 package org.yqj.source.demo.spring.framework.context;
 
+import jakarta.annotation.Resource;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
 
 /**
  * Description:
@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @date 2022/1/10
  * Email: yaoqijunmail@foxmail.com
  */
-//@Component
+@Component
 @Slf4j
 public class ComponentA {
 

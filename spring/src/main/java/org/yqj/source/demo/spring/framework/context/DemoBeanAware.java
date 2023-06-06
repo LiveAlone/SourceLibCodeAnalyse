@@ -1,16 +1,13 @@
 package org.yqj.source.demo.spring.framework.context;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.initialization.qual.Initialized;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 /**
  * Description:
@@ -26,7 +23,7 @@ public class DemoBeanAware implements BeanNameAware, ApplicationContextAware {
     @Resource
     private ComponentA componentA;
 
-    @Autowired
+    @Resource
     private ComponentB componentB;
 
     private String name;

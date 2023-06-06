@@ -1,11 +1,11 @@
 package org.yqj.source.demo.spring;
 
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.yqj.source.demo.spring.framework.aop.m2.Person;
 
-import javax.annotation.Resource;
 
 /**
  * Description:

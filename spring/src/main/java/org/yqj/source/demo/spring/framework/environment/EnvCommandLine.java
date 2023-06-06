@@ -4,9 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 
 /**
  * Description:

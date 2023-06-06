@@ -18,7 +18,7 @@ public class BootDemoApplication {
 //        String[] params = new String[]{"commandLineValue", "command_line_value"};
         String[] params = new String[]{};
         new SpringApplicationBuilder()
-//                .allowCircularReferences(true)
+                .allowCircularReferences(true)
                 .sources(BootDemoApplication.class)
 //                .applicationStartup(new FlightRecorderApplicationStartup())
                 .run(params);
