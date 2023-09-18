@@ -17,16 +17,16 @@ rootProject.name = "source"
 //include("net")
 //include("lettuce")
 //include("mapper")
-//include("resilience4j")
+//include("resilience4j") // done
 //include("sentinel")
 //include("graphQlBasic")
 //include("engine")
-include("leetcode")
+//include("leetcode")
 
 //include("empty")
 //include("spring") // done
 //include("spring-web")
-//include("actuator")
+//include("actuator") // done
 //include("datasource")
 //include("web-flux")
 //include("sw")
