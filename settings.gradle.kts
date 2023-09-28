@@ -10,10 +10,10 @@
 
 rootProject.name = "source"
 
-//include("app")
+//include("app")  // no
 //include("init") // no
-//include("cmd") // no
-//include("tool")
+//include("cmd")  // no
+//include("tool") // done
 //include("net")
 //include("lettuce")
 //include("mapper")
@@ -23,7 +23,7 @@ rootProject.name = "source"
 //include("engine")
 //include("leetcode")
 
-//include("empty")
+//include("empty")  // no
 //include("spring") // done
 //include("spring-web")
 //include("actuator") // done
