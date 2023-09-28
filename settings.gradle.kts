@@ -15,13 +15,13 @@ rootProject.name = "source"
 //include("cmd")  // no
 //include("tool") // done
 //include("net")
-//include("lettuce")
+//include("lettuce") // done
 //include("mapper")
 //include("resilience4j") // done
 //include("sentinel")
 //include("graphQlBasic")
-//include("engine")
-//include("leetcode")
+//include("engine")  // done
+//include("leetcode") // done
 
 //include("empty")  // no
 //include("spring") // done
