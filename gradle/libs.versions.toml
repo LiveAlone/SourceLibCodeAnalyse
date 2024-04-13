@@ -1,0 +1,6 @@
+[versions]
+springBoot = "3.2.4"
+
+[libraries]
+guava = "com.google.guava:guava:${versions.guava}"
+lombok = "org.projectlombok:lombok:${versions.lombok}"

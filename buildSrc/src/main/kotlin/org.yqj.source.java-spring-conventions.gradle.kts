@@ -14,12 +14,15 @@ repositories {
     mavenCentral()
 }
 
+// 版本定义
+val guavaVersion = "31.1-jre"
+
 dependencies {
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
 
-    implementation("com.google.guava:guava:30.1-jre")
+    implementation("com.google.guava:guava:$guavaVersion")
     implementation("org.springframework.boot:spring-boot-starter")
 
     testCompileOnly("org.projectlombok:lombok")

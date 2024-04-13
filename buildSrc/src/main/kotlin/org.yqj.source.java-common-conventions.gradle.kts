@@ -12,6 +12,9 @@ repositories {
     }
 }
 
+// 版本定义
+val guavaVersion = "31.1-jre"
+
 dependencies {
 
     // lombok
@@ -19,7 +22,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.20")
 
     // guava
-    implementation("com.google.guava:guava:30.1-jre")
+    implementation("com.google.guava:guava:$guavaVersion")
 
     // log
     implementation("ch.qos.logback:logback-core:1.2.3")
