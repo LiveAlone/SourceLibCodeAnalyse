@@ -18,7 +18,7 @@ public class BaseResponse<T> {
 
     private T data;
 
-    public static <T> BaseResponse successResponse(T data){
+    public static <T> BaseResponse<T> successResponse(T data){
         BaseResponse<T> baseResponse = new BaseResponse<>();
         baseResponse.setSuccess(true);
         baseResponse.setCode(0);
