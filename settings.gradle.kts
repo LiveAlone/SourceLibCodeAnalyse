@@ -25,9 +25,11 @@ rootProject.name = "source"
 
 //include("empty")  // no
 //include("spring") // done
-include("spring-web")
+//include("spring-web")
 //include("actuator") // done
 //include("datasource")
 //include("web-flux")
 //include("sw")
 //include("transaction")
+//include("redisson")
+include("mybatis")
