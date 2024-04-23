@@ -12,7 +12,7 @@
 7. app 构建可运行应用
 8. resilience4j 熔断 限时操作
 9. engine 规则引擎支持框架
-
+10. dub-api dubbo-api 服务接口
 
 spring 依赖配置管理
 
@@ -24,3 +24,5 @@ spring 依赖配置管理
 5. web-flux web Reactive 响应式编程
 6. sw sky walking trace 路径打点动态配置config
 7. transaction spring db 事务支持
+8. mybatis plus 集成查询方式
+9. dub-provider dub-consumer dubbo 服务提供者消费者
