@@ -6,6 +6,16 @@ plugins {
     id("org.yqj.source.java-spring-conventions")
 }
 
+dependencies{
+    implementation(platform("org.apache.dubbo:dubbo-bom:3.3.0-beta.1"))
+
+    // dubbo 依赖
+    implementation("org.apache.dubbo:dubbo-spring-boot-starter")
+    implementation("org.apache.dubbo:dubbo-zookeeper-curator5-spring-boot-starter")
+
+    implementation(project(":dub-api"))
+}
+
 publishing {
     publications {
         getByName<MavenPublication>("maven") {

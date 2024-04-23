@@ -1,4 +1,4 @@
-package org.yqj.source.demo.empty;
+package org.yqj.source.demo.consumer;
 
 /**
  * Created by yaoqijun.

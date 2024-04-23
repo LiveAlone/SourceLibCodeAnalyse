@@ -1,5 +1,6 @@
-package org.yqj.source.demo.empty;
+package org.yqj.source.demo.consumer;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
@@ -11,6 +12,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * Email: yaoqijunmail@foxmail.com
  */
 @SpringBootApplication
+@EnableDubbo
 public class BootDemoApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder()

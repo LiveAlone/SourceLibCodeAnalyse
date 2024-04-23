@@ -1,4 +1,4 @@
-package org.yqj.source.demo.empty;
+package org.yqj.source.demo.provider;
 
 /**
  * Created by yaoqijun.
