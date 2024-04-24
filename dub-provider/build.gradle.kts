@@ -11,7 +11,10 @@ dependencies{
 
     // dubbo 依赖
     implementation("org.apache.dubbo:dubbo-spring-boot-starter")
-    implementation("org.apache.dubbo:dubbo-zookeeper-curator5-spring-boot-starter")
+    implementation("org.apache.dubbo:dubbo-nacos-spring-boot-starter")
+//    implementation("org.apache.dubbo:dubbo-zookeeper-curator5-spring-boot-starter")
+
+    implementation("org.apache.dubbo:dubbo-serialization-fastjson2")
 
     implementation(project(":dub-api"))
 }

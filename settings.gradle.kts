@@ -22,7 +22,7 @@ rootProject.name = "source"
 //include("graphQlBasic")
 //include("engine")  // done
 //include("leetcode") // done
-//include("dub-api")
+include("dub-api")
 
 //include("empty")  // no
 //include("spring") // done
@@ -34,5 +34,5 @@ rootProject.name = "source"
 //include("transaction")
 //include("redisson")
 //include("mybatis")
-include("protobuf")
-//include("dub-provider", "dub-consumer")
+//include("protobuf")
+include("dub-provider", "dub-consumer")
