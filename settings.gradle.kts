@@ -14,25 +14,25 @@ rootProject.name = "source"
 //include("init") // no
 //include("cmd")  // no
 //include("tool") // done
-//include("net")
+include("net")
 //include("lettuce") // done
-//include("mapper")
+include("mapper")
 //include("resilience4j") // done
-//include("sentinel")
-//include("graphQlBasic")
+include("sentinel")
+include("graphQlBasic")
 //include("engine")  // done
 //include("leetcode") // done
 include("dub-api")
 
 //include("empty")  // no
 //include("spring") // done
-//include("spring-web")
+include("spring-web") // done
 //include("actuator") // done
-//include("datasource")
-//include("web-flux")
-//include("sw")
-//include("transaction")
-//include("redisson")
-//include("mybatis")
-//include("protobuf")
+//include("datasource") // done
+include("web-flux")
+include("sw")
+//include("transaction") // done
+//include("redisson") // done
+//include("mybatis") // done
+include("protobuf")
 include("dub-provider", "dub-consumer")
