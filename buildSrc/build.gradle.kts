@@ -12,7 +12,14 @@ repositories {
     gradlePluginPortal()
 }
 
+kotlin{
+    jvmToolchain(21)
+}
+
 dependencies {
     // spring plugin version
     implementation("org.springframework.boot:spring-boot-gradle-plugin:3.4.2")
+
+    // kotlin plugin version
+    implementation(libs.kotlinGradlePlugin)
 }

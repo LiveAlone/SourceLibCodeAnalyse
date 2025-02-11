@@ -7,11 +7,15 @@
  * in the user manual at https://docs.gradle.org/8.1.1/userguide/multi_project_builds.html
  * This project uses @Incubating APIs which are subject to change.
  */
+plugins {
+    // Use the Foojay Toolchains plugin to automatically download JDKs required by subprojects.
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
 
 rootProject.name = "source"
 
 //include("app")  // no
-include("init")
+//include("init")
 //include("cmd")  // no
 //include("tool") // done
 // include("net")
@@ -23,8 +27,9 @@ include("init")
 //include("engine")  // done
 //include("leetcode") // done
 // include("dub-api")
+include("kotlin")
 
-include("empty")  // no
+//include("empty")  // no
 //include("spring") // done
 // include("spring-web") // done
 //include("actuator") // done
