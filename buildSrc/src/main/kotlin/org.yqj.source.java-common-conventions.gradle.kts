@@ -13,32 +13,36 @@ repositories {
 }
 
 // 版本定义
-val guavaVersion = "31.1-jre"
+val guavaVersion = "33.3.0-jre"
+val lombokVersion = "1.18.36"
+val logbackCoreVersion = "1.5.16"
+val slf4jApiVersion = "2.0.16"
+var junitVersion = "4.13.2"
 
 dependencies {
 
     // lombok
-    compileOnly("org.projectlombok:lombok:1.18.20")
-    annotationProcessor("org.projectlombok:lombok:1.18.20")
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
     // guava
     implementation("com.google.guava:guava:$guavaVersion")
 
     // log
-    implementation("ch.qos.logback:logback-core:1.2.3")
-    implementation("ch.qos.logback:logback-classic:1.2.3")
-    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("ch.qos.logback:logback-core:$logbackCoreVersion")
+    implementation("ch.qos.logback:logback-classic:$logbackCoreVersion")
+    implementation("org.slf4j:slf4j-api:$slf4jApiVersion")
 
     ///////////////////////////
     ////////// test
     ///////////////////////////
 
     // junit
-    testImplementation("junit:junit:4.13.2")
+    testImplementation("junit:junit:$junitVersion")
 
     // lombok
-    testCompileOnly("org.projectlombok:lombok:1.18.20")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.20")
+    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
+    testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
 }
 
 publishing {
