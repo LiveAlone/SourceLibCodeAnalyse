@@ -1,18 +1,21 @@
 package org.yqj.source.init
 
-
-data class Employee (val name: String, var salary: Int)
-
-fun employeeById(id: Int) = when(id) {
-    1 -> Employee("Mary", 20)
-    2 -> null
-    3 -> Employee("John", 21)
-    4 -> Employee("Ann", 23)
-    else -> null
-}
-
-fun salaryById(id: Int) = employeeById(id)?.salary ?: 0
+import java.math.BigDecimal
 
 fun main() {
-    println((1..5).sumOf { id -> salaryById(id) })
+    // 1 readln print message
+//    println("input your name:")
+//    val name = readln()
+//    println("hello $name")
+//
+//    val wrongInt = readln().toIntOrNull()
+//    println(wrongInt)
+
+    // 2 content print
+//    val message = "this is hello world content"
+//    println(message.uppercase())
+
+    // 3 TODO
+    fun calcTaxes(): Int = TODO("Waiting for feedback from accounting")
+    calcTaxes()
 }
